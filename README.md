@@ -1,4 +1,5 @@
 # TYPESCRIPT-COLT STEELE
+
 This will be my repo for Colt Steele's TypeScript course.
 =========================================================
 Going to update the README.md later, but for now I'm 
