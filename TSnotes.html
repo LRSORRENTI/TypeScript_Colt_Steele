@@ -225,10 +225,144 @@
       </p>
     </div>
     <div class="container">
-      <h2>
-        <u> Installing TypeScript </u>
+      <h2 class="mt-4 text-center">
+        <b> <u> Installing TypeScript </u></b>
       </h2>
       <p>So let's get TypeScript installed</p>
+      <p>
+        After running via npm, we can use npm to install TypeScript globally,
+        this means that you can use the tsc command anywhere in your terminal.
+        To do this, run npm install -g typescript. This will install the latest
+        version (currently 4.8).
+      </p>
+      <p>
+        Also we can use the TypeScript playground on the official
+        typescriptlang.org link, many sections of the course can be practiced
+        entirely in this playground if so desired
+      </p>
+      <p>
+        <b
+          >Also please REFER to the official website as often as possible! It
+          has amazing documentation with examples, and is a great tool to
+          supplement your learning
+        </b>
+      </p>
+    </div>
+    <div class="container">
+      <h2 class="mt-4 text-center">
+        <b><u>How we use TypeScript</u></b>
+      </h2>
+      <p>
+        Let's discuss how we'll use TS in this course and the basic workflow
+        we'll follow
+      </p>
+      <p>
+        First off we need to create a .ts file, similar to how a JavaScript file
+        ends in like script.js
+      </p>
+      <p>
+        There is a second extension we'll be using later, that being '.tsx', and
+        we'll go over this more when we get to React + TypeScript together
+      </p>
+      <p>
+        .tsx refers to being able to write 'jsx' syntax, and we'll be going over
+        all of that more thoroughly once we get to our react sectiom
+      </p>
+      <p>
+        So even just typing in Math.round() into our TS file, TS is saying 'we
+        expected an argument here and there's nothing'
+      </p>
+      <p>
+        So much of TypeScript is not executing or compiling a file, it's the
+        ingredients phase, TS will display errors way before we even put our
+        ingredients together and try to cook them
+      </p>
+      <p>
+        There's a second part to this though, after running tsc basics.js our JS
+        file is auto updated and includes the compiled code
+      </p>
+      <p>
+        <b
+          >QUICK NOTE HERE, I'M HAVING SOME TROUBLE USING THE POWERSHELL IN
+          VSCODE, I THINK THERE'S SOME KIND OF ACCESS RESTRICTION GOING ON BUT
+          THE 'TSC' COMMAND IS WORKING FINE IN GIT BASH AND IS AUTO-UPDATING ON
+          VSCODE, FOR NOW I'LL JUST USE GIT BASH TO USE THE 'TSC' COMMAND,
+          TROUBLESHOOT THESE ACCESS ERROR MESSAGES IN VSCODE POWERSHELL LATER
+        </b>
+      </p>
+      <p class="h2">
+        <b
+          >So in a nutshell: Writing TypeScript is like using a spell-check for
+          our code, and the 'tsc' command is what compiles our TS, two step
+          process, write TS in our ide, then in git bash or command line type
+          tsc + filename.ts
+        </b>
+      </p>
+    </div>
+    <div class="container mt-4">
+      <h2 class="text-center">
+        <u> <b> Our first type annotation </b> </u>
+      </h2>
+      <p>
+        So we've established the obvious point that there are types in
+        TypeScript, there are many of these types and we'll dive into all of
+        them
+      </p>
+      <p>
+        But first let's talk about where we apply types in our TypeScript code
+        there's many different situations from things like functions, i.e: this
+        function must return a boolean, or an array of booleans, or a number,
+        string, you get the idea
+      </p>
+      <p>
+        We can also say 'This function accepts two numbers and returns one
+        number'
+      </p>
+      <p>
+        We can get very detailed about the patterns, shapes of objects, like
+        this object must have a specific property called 'colors', and 'colors'
+        must be set to an array of strings
+      </p>
+      <p>
+        Or we can do something very simple by saying 'hey TS, this variable is a
+        string'
+      </p>
+      <p>
+        We can do this very easily, all we do is 'const myVariable: string = "so
+        awesome!"'
+      </p>
+      <p>
+        And after running the tsc command our JS file will display ' const
+        myVariable = "so awesome!"'
+      </p>
+      <p>We just added a type! This is called <b>TYPE ANNOTATION</b></p>
+      <p>The syntax is: let myVar: type = value</p>
+      <p>And the type is always lowercase, no capital S for string</p>
+      <p>
+        Also we can reassign variables is TS if it's the same type, for ex we
+        could do 'myVariable = "TypeScript is awesome"' and our variable from
+        earlier updates, similar to how 'let' works in JS
+      </p>
+      <p>
+        For ex: let movieTitle: string = "Amadeus"; movieTitle = "Arrival"
+       <p>
+        Now movieTitle = Arrival, but if we change it to be 
+        a number 
+       </p>
+       <p>
+        movieTitle = 9
+       </p>
+      </p>
+      <p>Type 'number' is not assignable to type 'string'.</p>
+      <p>
+        So TS is fine with us changing movieTitle from Amadeus to Arrival, but
+        once we try to change movieTitle to a number, TS throws the error
+      </p>
+      <p>
+        Something similar happens if we try 
+        to use a method on the wrong data type, 
+        like trying to use .toUpperCase on a number 
+      </p>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
