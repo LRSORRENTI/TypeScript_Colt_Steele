@@ -364,6 +364,109 @@
         like trying to use .toUpperCase on a number 
       </p>
     </div>
+    <div class="container mt-4">
+      <h2 class="text-center"><u>
+        Working with numbers and booleans</u></h2>
+        <p>
+           So just like in JS we have a number data type, 
+           some languages have things like 'floats' ,'int' and 
+           others but in TypeScript as well as JavaScript numbers 
+           are just numbers
+        </p>
+        <p>
+          In TS we use the type annotation 'number' all lowercase
+        </p>
+        <p>
+          When we tell TS 'this specific variable is a number, it should 
+          always be a number, the number can be reassigned, but it must 
+          be a number'
+        </p>
+        <p>
+          We also have 'boolean' as a type, that's the same concept as number, 
+          'boolean' must be lowercase, and if the value of the variable 
+          changes from true to false, that's fine, but it must be a boolean
+        </p>
+
+    </div>
+    <div class="container">
+      <p class="h3">Let's look at an example of where TS will throw an 
+        error in the terminal when we try to compile the TS file into JS:
+      </p>
+      <p>
+      le`
+</p>
+      <p class="h2">
+    Okay so PowerShell is working now, after running tsc variables.ts, in the terminal 
+  following is displayed:
+      </p>
+      <p>
+        variables.ts:9:1 - error TS2322: Type 'string' is not assignable to type 'boolean'.
+</p>
+<p>
+9 gameOver = "true"
+  ~~~~~~~~
+  </p>
+      <p>
+        Also as a note the compiled JS is using 'var' instead of 'let'
+        which we can configure later, but for now let's roll with var
+      </p>
+      <p>
+        But the main takeaway from this section is that we use tsc + filename.ts in 
+        our terminal, then we'll get a compiled js file from that ts file, 
+      </p>
+    </div>
+    <div class="container">
+      <h2 class="text-center"><u>Type Inference</u></h2>
+      <p>
+        Let's go over type Inference, type inference refers to the 
+        TypeScript compilers ability to infer types from certain values 
+        in your code.
+      </p>
+      <p>
+        TypeScript can remember a value's type even if you didn't provide 
+        a type annotation, and will enforce that original type set to 
+        that variable from then on. Ex:
+      </p>
+      <p>
+        //Creating a variable with a value but without type annotation
+      </p>
+      <p>
+        let x = 27
+      </p>
+      <p>
+        x = "twenty-seven"
+      </p>
+      <p>
+        //ERROR - Type 'string' is not assignable to type 'number'
+      </p>
+      <p>
+        Most of the time when we write a variable, we can rely on 
+        type inference, but there ARE situations where we must annotate 
+        variables, and we'll learn more about that later
+      </p>
+      <p>
+      //type inference
+      </p>
+      <p>
+let tvShow = "Initial D";
+</p>
+<p>
+tvShow = "Breaking Bad"
+</p>
+<p>
+//no problem, tvShow is now breaking bad
+</p>
+<p>
+tvShow = false
+</p>
+<p>
+//problem, Type 'boolean' is not assignable to type 'string'.ts(2
+      </p>
+      <p>
+        Above we did not use type inference, we could've but 
+        we let TS infer it for us.
+      </p>
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
