@@ -478,7 +478,135 @@ tvShow = false
           when not to use it!
         </b>
       </p>
+      <p class="h3 mt-3">
+        If we declare a variable like: let newVar;, by default we just set 
+        newVar to type: any, but if we know at some point it will for sure be 
+        a string or number, or boolean we'd use:
+      </p>
+      <p class="h3 mt-3">
+           let newVar: string; or, let newVar: number;, let newVar: boolean;
+      </p>
     </div>
+    <div class="container mt-4">
+      <p class="h2 mt-3">
+        <b><u>FUNCTIONS</u></b>
+      </p>
+      <p class="h3 mt-4">
+        Now let's look at how we can assign types to function 
+        parameters, and return values. This is far more common, you'll 
+        do this all the time
+      </p>
+      <p class="h3 mt-4">
+        And with function parameters it's the same sort've setup, if we have 
+        function myFunction(param1: string, param2: number){
+          return (param1.toUpperCase(), param2 * 2)
+        }, and that's how we define parameter types, but we can't 
+        pass in a boolean to param1, or a string to param2 when we invoke 
+        the function
+      </p>
+      <p class="h3 mt-4">
+        Also we can set default values to the parameter:
+        function greet(person: string = "John doe"){
+          return `hi there ${person}`
+      }
+      </p>
+      <p class="h3 mt-4">
+        We set the default value to the param after the type declaration
+      </p>
+    </div>
+    <div class="container mt-4">
+      <p class="h3 mt-3">
+        We also can declare the return value type in our 
+        function declaration, TypeScript often infers this however,
+        explicit annotations are sometimes preferred, we add 
+        the annotation after the function parameter list but before the 
+        curly brackets or arrow 
+      </p>
+      <p class="h3 mt-4">
+        The reason we do this is so that it's obvious what the function is 
+        supposed to return
+      </p>
+      <p class="h3 mt-4">
+        Next let's talk about the 'void' type
+      </p>
+      <p class="h3 mt-4">
+        Void is a type we only really annotate to functions, 
+        it's used for functions that don't return any data, it means 
+        this function is void of any data
+      </p>
+      <p class="h3 mt-4">
+        TypeScript can infer this, but sometimes you may 
+        want to annotate a function with a void return explicitly
+      </p>
+      <p class="h3 mt-4">
+        Next up we've got the 'never' type annotation, this type 
+        annotation isn't commonly used but it's important to know 
+        what it is, and how it's used
+      </p>
+      <p class="h3 mt-4">
+        We would use the never type to annotate 
+         a function that always throws an exception, or 
+         a function that never finishes executing, like a while true 
+         function with no stopping condition
+      </p>
+    </div>
+    <div class="container mt-4">
+      <p class="h3 mt-4">
+      // **********************************************
+// ******************* PART 1 *******************
+// **********************************************
+</p>
+<p class="h3 mt-4">
+// Write a function called "twoFer" that accepts a person's name
+// It should return a string in the format "one for ${name}, one for me"
+// If no name is provided, it should default to "you"
+</p>
+<p class="h3 mt-4">
+// twoFer() => "One for you, one for me"
+// twoFer("Elton") => "One for Elton, one for me"
+</p>
+<p class="h3 mt-4">
+function twoFer(myName:string, you: string = "you"){
+return `one for ${you}, one for ${myName}`
+}
+
+twoFer("Elton")
+</p>
+<p class="h3 mt-4">
+
+// **********************************************
+// ******************* PART 2 *******************
+// **********************************************
+</p>
+<p class="h3 mt-4">
+// Write a isLeapyear() function that accepts a year and returns true/false 
+//depending on if the year is a leap year
+</p>
+<p class="h3 mt-4">
+// isLeapYear(2012) => true
+// isLeapYear(2013) => false
+</p>
+<p class="h4 mt-4">
+// To determine whether a year is a leapyear, use this "formula":
+// A YEAR IS A LEAPYEAR IF
+// - year is a multiple of 4 AND not a multiple of 100
+// OR...
+// - year is a multiple of 400
+// hint - use modulo
+</p>
+<p class="h3 mt-4">
+function isLeapYear(year: number): boolean{
+    if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
+        console.log(year + ' is a leap year');
+        return true
+    } else {
+        console.log(year + ' is not a leap year');
+        return false
+    }
+}
+</p>
+</div>
+  
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
