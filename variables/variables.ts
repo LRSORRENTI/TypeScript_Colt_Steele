@@ -17,3 +17,12 @@ tvShow = false
 let isFunny = false;
 isFunny = true 
 isFunny = 'abs'
+
+//the any type
+let thing: any = "hello"
+thing = 1 
+thing = [7, 3, 5]
+thing = { key: "Value"}
+
+let things = "hey"
+things = () => {}
