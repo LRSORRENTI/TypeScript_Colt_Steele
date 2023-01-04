@@ -29,5 +29,56 @@
     </style>
     <h1>TypeScript Notes</h1>
     <h2>TypeScript Objects</h2>
+    <div class="container">
+      <h2>OBJECTS IN TS</h2>
+      <p>
+        Objects in TS are just like JS, except in TS we use tpye annotation for
+        the key value pairs inside the object
+      </p>
+      <p>
+        This is especially useful when we use functions tor create new objects
+      </p>
+      <p>
+        Objects can be typed by declaring what the object should look like in
+        the annotation
+      </p>
+      <p>
+        Accessing a property that isn't defined or performing operations without
+        keeping types in mind will throw errors!
+      </p>
+    </div>
+    <div class="container">
+      <p>
+        Let's try this out, let's declare this function below and in the
+        parameter list let's say it's expecting an object to be passed in:
+      </p>
+      <p></p>
+      <p>function printName(person: {first: string}){}</p>
+      <p>At this point above, if we pass in something like:</p>
+      <p>printName({})</p>
+      <p>
+        TS in the IDE will say 'hey! you said printName needed the property
+        "first" what's going on here programmer man??'
+      </p>
+      <p>Then we mess with typescript again and pass in:</p>
+      <p>printName({first: 2})</p>
+      <p>
+        Then typescript is like 'okay nice you passed in the first property good
+        job, WAIT! you passed in a number?? come on man you said in the
+        declaration annotation first needed to be a string!!'
+      </p>
+      <p>printName({first: "Luke"})</p>
+      <p>Now TS throws no errors, we're good</p>
+      <p>But let's say we want both the first and last name printed</p>
+      <p>printName({first: string, last: string})</p>
+      <p>printName({first: "Luke"})</p>
+      <p>Now TS says 'WAIT! You're missing the last property</p>
+      <p>printName({first: "Luke", last: "Sorrenti"})</p>
+      <p>function printName(person: { first: string;</p>
+      <p>last: string}): void {</p>
+      <p>console.log(`Hi! I'm {person.first} {person.last}` );</p>
+      <p>}</p>
+      <p>printName({first: "Luke", last: "Sorrenti"});</p>
+    </div>
   </body>
 </html>

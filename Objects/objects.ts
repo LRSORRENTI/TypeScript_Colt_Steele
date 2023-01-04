@@ -25,4 +25,6 @@ function add(sum: {num1: number, num2: number}): void {
 
 add({num1: 5, num2: 8})
 
-printDogName({name: 'molly', breed: 'rottweiler'})
+printDogName({name: 'molly', breed: 'rottweiler', age: 7})
+const ageOfDog = {name: 'molly', breed: 'rottweiler', age: 7}
+printDogName(ageOfDog)
