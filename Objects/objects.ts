@@ -26,5 +26,15 @@ function add(sum: {num1: number, num2: number}): void {
 add({num1: 5, num2: 8})
 
 printDogName({name: 'molly', breed: 'rottweiler', age: 7})
+
+//The reason why the above is underlining an error for the 
+//age is because TS devs decided it's better to not allow 
+//extra stuff to be passed in, if we want to add extra key 
+//value pairs to the object we must first create a new variable 
+// and store the extra key value pairs after the main object's 
+//key value pairs, like below, we've created a variable, added 
+//the age to the end after name and breed, and voila! We're 
+//good to go
+
 const ageOfDog = {name: 'molly', breed: 'rottweiler', age: 7}
 printDogName(ageOfDog)
