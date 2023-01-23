@@ -1,0 +1,35 @@
+=============================
+TYPE ALIASES
+=============================
+
+Next up let's go over type ALIASES, this is how we can re-use 
+a type and give it a name, we often do this with 
+more compicated types like object types
+
+Instead of writing object types in an annotation, 
+we can declare them separately in a TYPE ALIAS, 
+which will simply be the desired shape of 
+the object
+
+This helps make our TS code more readable 
+and reusable elswehere in our code!
+
+===================================================
+
+EXAMPLE: 
+
+// Type alias below!
+
+type Person = {
+    name: string; 
+    age: number;
+};
+
+// Use the type alias in the annotation
+
+const sayHappyBirthday = (person: Person) => {
+    return `Hey ${person.name}, congrats on 
+    turning ${age}!`;
+}
+
+sayHappyBirthday({name: 'Luke', age: 29});
