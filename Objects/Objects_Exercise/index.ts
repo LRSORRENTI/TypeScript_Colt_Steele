@@ -53,3 +53,11 @@ return worldGross - budget;
 
   console.log(getProfit(dune))
   console.log(getProfit(cats))
+
+  // So my solution to the above was different than 
+  // colts he did :
+
+  //function getProfit({ boxOffice: {grossWorldwide, budget} } ): Movie){
+    // number { 
+    // return grossWorlwide - budget
+    //}
