@@ -32,3 +32,5 @@ function getProfit(param1) {
 }
 console.log(getProfit(dune));
 console.log(getProfit(cats));
+
+
