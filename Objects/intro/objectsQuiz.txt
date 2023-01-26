@@ -1,0 +1,71 @@
+Given this function definition:
+
+function createUser(user: {
+  username: string;
+  email: string;
+  isAdmin: boolean;
+}) {
+  return "blah";
+}
+Which of the following answers is a VALID createUser call?
+
+I got this correct(honest), the answer is: 
+
+createUser({isAdmin: true, 
+username: "chickenman",
+ email: "todd@gmail.com})
+
+The other choices were: 
+
+1. 
+
+createUser({username:
+ "chickenman,
+  email: "todd@gmail.com })
+
+The reason this is incorrect is because it 
+omits the boolean key in the function call
+
+2. 
+
+createUser({isAdmin: true,
+ username: "chickenman", 
+email: "todd@gmail.com",
+color: "blue"})
+
+The reason this is incorrect is because 
+in our function call we can't 
+pass in addtional key value pairs 
+into our object
+
+If we wanted to add the color blue property 
+to our function call, we could assign it to 
+a variable then pass that variable into our 
+createuser function call, like this:
+
+
+const addColorProp = {isAdmin: true,
+                     username: "chickenman",
+                        email: "todd@gmail.com",
+                        color: "blue"         
+                                 }
+
+          Now that we've defined a new variable 
+          we pass it in:
+
+          createUser(addColorProp);
+
+          Now we're good to go, if we want 
+          to add addtional things to the argument,
+          we first define them inside of a 
+          unique variable and pass that variable instead                     
+
+
+
+3. 
+
+createUser({})
+
+
+Should be obvious as to why this is 
+incorrect
