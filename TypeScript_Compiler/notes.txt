@@ -1,0 +1,102 @@
+In this section we'll learn to configure the TS 
+compiler
+
+In order to change TS config, from the terminal in 
+VS code or bash, in the TS file / folder run:
+
+tsc --init
+
+this will create a tsconfig.json file, 
+and inside our tsconfig.json file 
+there's a lot, over 100 commented and some 
+uncommented settings
+
+Accompanied by explanations of what each 
+setting for a particular config does,
+this is where we can modify how TS behaves 
+during compilation
+
+=======================
+
+WATCH MODE 
+
+========================
+
+Watch mode is a command we can add to the 
+tsc command: 
+
+tsc -w index.ts
+
+OR: 
+
+tsc --watch index.ts 
+
+This will make TS actively monitor the index.ts file, 
+and TS will watch for any file changes that occur
+
+==============
+
+AS A NOTE, IT'S EASIER TO SEE IN VSCODE
+ INTEGRATED TERMINAL
+
+
+
+
+
+
+ ==============================
+
+ WORKING WITH MULTIPLE FILES
+
+ ==============================
+
+We can also work with multiple files 
+
+Let's add another file to demonstrate working 
+with more than one TS file, which is much more common 
+working on an actual team for a job that 
+uses TS
+
+Inside the folder, if we want to compile multiple 
+files, instead of appending: tsc index.ts
+which will only compile that one ts file 
+we can just run tsc on it's own: 
+
+tsc 
+
+Make sure you're in the correct folder, since 
+running tsc on it's own will compile every ts file 
+inside of that folder
+
+We can configure that tsc command to ignore a specific 
+file, and compile all the other TS files, one 
+way to do this is with the TS option called :
+
+# Files - files
+
+On the docs, under project configuration there's 
+tsconfig reference,
+
+Important to note files is known as a top level compiler 
+option, so it does outside of the compiler 
+options json object: 
+
+So in our tsconfig.json file, OUTSIDE the 
+ "compilerOptions": {} we add a comma then 
+
+ "files": [index.ts, test.ts, example.ts] }
+
+now tsc will ignore any other ts files inside of 
+our folder, so if we had index2.ts in addition 
+to index.ts, test.ts, and example.ts but 
+we didn't want it to be compiled, using 
+that json notation and excluding index2.ts, it would not 
+be included when running tsc
+
+============================
+
+ANOTHER WAY TO ACCOMPISH TSC FILE compilation:
+
+INCLUDE & EXCLUDE
+
+=========================
