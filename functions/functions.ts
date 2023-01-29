@@ -4,14 +4,14 @@ function square(num: number){
 square(30)
 
 
-function myFunction(param1: string, param2: number){
+function myFunction(param1: string, param2: number): string | number{
     return (param1.toUpperCase(), param2 * 2)
 }
 function greet(person: string = "John doe"): string{
     return `hi there ${person}`
 }
-const colors = ["Red", "Green"]
-colors.map((color: string) => {
+const funcColors = ["Red", "Green"]
+funcColors.map((color: string): string => {
     return color.toUpperCase()
 })
 

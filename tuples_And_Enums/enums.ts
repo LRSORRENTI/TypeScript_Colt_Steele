@@ -27,13 +27,16 @@ function isDelivered(status: OrderStatus){
 
 isDelivered(OrderStatus.DELIVERED)
 
-// So in a nutshell that's what enums are, they are named constants 
+// So in a nutshell that's what enums are, 
+//they are named constants 
 // that we can reference in our code
 
 // MORE ABOUT ENUMS :
 
-// We can also change the numeric values assigned in our enums,
-// remember if you hover over any of the values above like SHIPPED, 
+// We can also change the numeric,
+// values assigned in our enums,
+// remember if you hover over
+// any of the values above like SHIPPED, 
  // it will display SHIPPED = 1, 
 
  // but we can assign a new value:
