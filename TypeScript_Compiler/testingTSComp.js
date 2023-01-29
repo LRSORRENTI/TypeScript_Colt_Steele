@@ -1,4 +1,5 @@
-var hen1 = {
+"use strict";
+const hen1 = {
     breed: "Silkie",
     eggsPerWeek: 4,
     name: "norma",
