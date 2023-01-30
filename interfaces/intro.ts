@@ -10,7 +10,10 @@
 //     x: number, 
 //     y: number
 // }
-
+interface newerPoint {
+    x: number,
+    y: number
+}
 // the above is a custom type we've just created, where each 
 // value must be a number
 
@@ -31,6 +34,10 @@ interface Person {
     age: number
 }
 
+type newPerson = {
+    name: string,
+    age: number
+}
 
 // type Point = {
 //     x: number, 

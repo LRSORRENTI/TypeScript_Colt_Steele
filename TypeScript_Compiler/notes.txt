@@ -100,3 +100,91 @@ ANOTHER WAY TO ACCOMPISH TSC FILE compilation:
 INCLUDE & EXCLUDE
 
 =========================
+
+Include allows us to config TS to include 
+a given number of files, below in the ex, 
+everything in the src and test directory 
+will be included in the config
+
+{
+    "include": ["src/**/*", "test/**/*"]
+}
+
+and if we need to exclude a specific file it's 
+the same syntax but using "exclude":[]
+
+
+=============================================
+
+OUTDIR 
+
+=============================================
+
+OUTDIR is how we specify where the returned / 
+compiled JS file are placed, typically 
+we'll have an src folder for all the TS files, then 
+denote an output directory for our JS files after 
+running tsc
+
+after creating a dist directory, and in the tsconfig.json, 
+uncommenting the outdir value and setting it to: 
+
+"outDir": "./dist",  
+
+all the ts files will compile their respective js 
+files in the dist folder
+
+==================================================
+
+TARGET OPTION 
+
+===================================================
+
+This is where we specify which version of ES to compile 
+to 
+
+ "target": "es2016",     
+
+ is what it's currently set to, but it can be set to 
+ es3, es5, es2016, es2017 all the way up to es2022
+
+ =================================
+
+ STRICT OPTION
+
+ ==================================
+
+This is where we can alter the type checks, 
+and constraints for TS, if we change :
+
+"strict": true
+
+to 
+
+"strict": false
+
+we can then change the other type checks that 
+TS will check, but keep in mind this defeats 
+the purpose of TS, most of the time "strict": true
+
+So if in the future you work with a codebase, check and 
+see what the config is set to in tsconfig.json 
+
+==============================================================
+
+COMPILER WRAP UP 
+
+==========================================
+
+Later on we're going to go into more detail 
+inside the tsconfig.json and go over 
+lib, and modules which often will be altered
+
+Also there's allowJS option, to allow js files in 
+the program, then maybe import JS files into the 
+TS files
+
+
+A commonly used extra is "noEmitOnError": true, 
+which will not allow any compilation if errors are 
+in the TS file
