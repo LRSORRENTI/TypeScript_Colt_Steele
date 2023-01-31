@@ -1,2 +1,48 @@
 Since we're going to manipulate the DOM, 
-we need an index.html file, 
+we need an index.html file, and also we need 
+to get the full set up for the project, that 
+way we don't need to use 'tsc' every time we, 
+make a change
+
+1. In root of project folder run 'tsc --init' 
+which creates the TS config file
+
+2. Create a src folder, and a dist folder, src 
+will house TS files, and dist will house JS files
+
+3. Inside src create index.ts
+
+4. Inside tsconfig.json change outDir to "./dist"
+
+5. At bottom : }, "include": ["./src"]
+
+6. Then in the integrated terminal run 'tsc -w" (This 
+is how we can get TS to auto-compile JS on save, w/o 
+watch mode enabled we'd need to run tsc every change)
+
+7. Create an index.html file 
+
+8. in root folder run: 'npm init -y" which 
+creates the package.json
+
+9. change the name in the package.json to all lower 
+case, package.json "name": "value" the value 
+should always be lowercase
+
+10. run "npm install lite-server" which will auto show up 
+in the package.json
+
+11. In package.json, under scripts add: 
+"start": "lite-server", so that when we run 
+npm start it runs lite-server
+
+12. In VSCODE there should be two terminals, one 
+where TS is in watch mode which recompiles 
+our TS into JS on save, and the second where 
+we run "npm start" which will house the live server
+
+13. Now if we make any changes in TS files, everything 
+will auto update, and lite-server will serve up the 
+web app, this is important to note, live-server with 
+VSCODE is different, to serve up the full web app we 
+need to use lite-server instead
