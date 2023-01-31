@@ -1,0 +1,29 @@
+Let's go over the DOM w/ TS, 
+we need to go over how TS interacts with 
+DOM manipulation methods, like getElementByID, 
+and querySelector etc.. 
+
+Start with something simple like a button with the 
+text : click me 
+
+const btn = document.querySelector("button")
+
+if in a TS file we type : document
+
+then hover over TS shows: 
+
+var document: Document
+
+TS automatically knows about the document object 
+and it's type, and if we right click on document then 
+select 'view type definition' the following is displayed:
+
+interface Document extends Node,
+ DocumentAndElementEventHandlers,
+  DocumentOrShadowRoot, FontFaceSource,
+   GlobalEventHandlers, NonElementParentNode,
+    ParentNode, XPathEvaluatorBase {
+
+Essentially TS knows beforehand that if we use 
+document.getElementByID() whats passed in need to be 
+a string like ('btn')
