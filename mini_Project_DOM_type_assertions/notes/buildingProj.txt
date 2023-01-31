@@ -1,0 +1,2 @@
+Since we're going to manipulate the DOM, 
+we need an index.html file, 

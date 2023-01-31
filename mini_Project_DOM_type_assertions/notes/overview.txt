@@ -21,3 +21,5 @@ specific folder
 At the bottom on the config.json add a commma 
 and use "include": ["src"] which houses all the 
 TS files 
+
+======================================================
