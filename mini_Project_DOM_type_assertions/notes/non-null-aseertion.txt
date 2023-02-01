@@ -50,3 +50,25 @@ if not, then don't
 
 So that's one way of fixing the problem, but if we changed 
 the id then it wouldn't work anymore 
+
+however there's another way, a way only available in TS ,
+this way uses the "non null assertion operator" which 
+in TS is the exclamation point appended to the 
+getElementByID: 
+
+const btn = document.getElementById("btn")!; 
+
+Appending the ! to the above tells TS, stop worrying, 
+const btn is not going to be null, it for sure exists
+
+After adding the '!' if you hover over btn, you'll 
+see that the union type is gone, null is gone, 
+it's only type is now HTMLElement, if we 
+remove the '!' then the union type of HTMLElement | null 
+returns 
+
+This is riskier, but if we know 100% the id is there, we 
+append the getElementById with '!'
+
+Remember only use the '!' if it's 100% known something exists, 
+if unsure then use btn?.addEventListener
