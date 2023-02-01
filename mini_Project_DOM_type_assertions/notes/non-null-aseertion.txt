@@ -1,0 +1,52 @@
+This mini project will illustrate how non-null 
+assertion operator works using the DOM as a 
+canvas to demonsrate
+
+When we save the button :
+
+const btn = document.getElementByID("btn")
+
+what is btn? 
+
+Well its an HTMLButtonELement in the prototype 
+chain if we look 
+at console.dir(btn)
+
+But if we hover over const btn, TS will say this btn 
+is of type HTMLElement or Null, so it's a union type 
+
+TS has no way of knowing exactly what type of HTMLElement 
+btn is, so it's giving a generic type, the 
+HTMLElement type 
+
+And the reason why null is there as a union type, is 
+so that if TS doesn't find btn, if btn is misspelled 
+or whatever, and TS can't find it, then it's null 
+
+And this is a problem that can occur freqeuntly with TS 
+and the DOM 
+
+Where we're working with a value that may or may not 
+exist, we find the element, or we don't 
+
+Which can cause issues, for example, a common 
+thing with buttons is addEventListener and listen 
+for "click": 
+
+btn.addEventListener("click") => { }
+
+if we hover on addEventListener, TS complains and says
+"object is possibly null, shouldn't call this method" 
+
+One fix is to add "?" right after btn: 
+
+btn?.addEventListener("click", function() {
+    alert("clicked")
+})
+
+however this is not for TS, this is for JS after compilation, 
+in JS it would be if btn exists, run this code on click, 
+if not, then don't 
+
+So that's one way of fixing the problem, but if we changed 
+the id then it wouldn't work anymore 
