@@ -20,6 +20,7 @@ function handleSubmit(event: SubmitEvent) {
     const newLi = document.createElement("li")
     newLi.append(newTodoItem);
     uL.append(newLi)
+    input.value = ""
 }
 
 form.addEventListener("submit", handleSubmit)
