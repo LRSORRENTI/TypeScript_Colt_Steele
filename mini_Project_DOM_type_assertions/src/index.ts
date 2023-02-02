@@ -5,6 +5,14 @@
 // console.log('browswe sync updating?')
 // console.log("live server?")
 
+
+interface Todo {
+    text: string;
+    completed: boolean;
+}
+
+const todos: Todo[] = [];
+
 const btn = document.getElementById('btn')! as HTMLButtonElement;
 
 const input = document.getElementById("todo")! as HTMLInputElement;
@@ -16,18 +24,31 @@ const uL = document.getElementById("todolist")!
 
 function handleSubmit(event: SubmitEvent) {
     event.preventDefault();
-    const newTodoItem = input.value;
+    const newTodo: Todo = {
+        text: input.value,
+        completed: false
+    };
+    createTodoElement(newTodo);
+    todos.push(newTodo);
+
+    // the above is just in memory, a small data structure, 
+    //below is what's viewed  on the page
+    input.value = "";
+}
+
+function createTodoElement(todo: Todo){
+    
     const newLi = document.createElement("li");
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox"
-    newLi.append(newTodoItem);
+    newLi.append(todo.text);
+    // the .text is from the interface defined above
+    newLi.append(checkbox);
+    
     uL.append(newLi)
-    newLi.append(checkbox)
-    input.value = ""
 }
 
 form.addEventListener("submit", handleSubmit)
-
 
 // TS infers that the event param is of type SubmitEvent
 
