@@ -7,10 +7,17 @@
 
 const btn = document.getElementById('btn')! as HTMLButtonElement;
 
-const input = document.getElementById("todo")! as HTMLInputElement
+const input = document.getElementById("todo")! as HTMLInputElement;
 
 // above we need to cast it using the 'as' keyword
+const form = document.getElementById("form")! as HTMLFormElement;
 
+form.addEventListener("submit", function(event){
+event.preventDefault();
+    console.log("submitted")
+})
+
+// TS infers that the event param is of type SubmitEvent
 
 // console.log(btn)
 
