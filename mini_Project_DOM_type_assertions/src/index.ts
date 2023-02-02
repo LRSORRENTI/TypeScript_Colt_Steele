@@ -12,17 +12,25 @@ const input = document.getElementById("todo")! as HTMLInputElement;
 // above we need to cast it using the 'as' keyword
 const form = document.getElementById("form")! as HTMLFormElement;
 
-form.addEventListener("submit", function(event){
-event.preventDefault();
-    console.log("submitted")
-})
+const uL = document.getElementById("todolist")!
+
+function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    const newTodoItem = input.value;
+    const newLi = document.createElement("li")
+    newLi.append(newTodoItem);
+    uL.append(newLi)
+}
+
+form.addEventListener("submit", handleSubmit)
+
 
 // TS infers that the event param is of type SubmitEvent
 
 // console.log(btn)
 
-btn?.addEventListener("click", function(){
-    alert(input.value)
-    input.value = ""
-})
+// btn?.addEventListener("click", function(){
+//     alert(input.value)
+//     input.value = ""
+// })
 
