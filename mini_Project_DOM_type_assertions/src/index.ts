@@ -17,9 +17,12 @@ const uL = document.getElementById("todolist")!
 function handleSubmit(event: SubmitEvent) {
     event.preventDefault();
     const newTodoItem = input.value;
-    const newLi = document.createElement("li")
+    const newLi = document.createElement("li");
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox"
     newLi.append(newTodoItem);
     uL.append(newLi)
+    newLi.append(checkbox)
     input.value = ""
 }
 
