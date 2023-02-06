@@ -94,7 +94,7 @@ let colors: (RGB | HSL)[] = []
 // }
 
 
-const greet = (param1: string | string[]) => {
+const greeter = (param1: string | string[]) => {
     if(typeof param1 === 'string'){
         console.log(`hello ${param1}`)
           } else {

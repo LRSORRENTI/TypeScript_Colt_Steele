@@ -1,0 +1,190 @@
+In this section we'll learn to configure the TS 
+compiler
+
+In order to change TS config, from the terminal in 
+VS code or bash, in the TS file / folder run:
+
+tsc --init
+
+this will create a tsconfig.json file, 
+and inside our tsconfig.json file 
+there's a lot, over 100 commented and some 
+uncommented settings
+
+Accompanied by explanations of what each 
+setting for a particular config does,
+this is where we can modify how TS behaves 
+during compilation
+
+=======================
+
+WATCH MODE 
+
+========================
+
+Watch mode is a command we can add to the 
+tsc command: 
+
+tsc -w index.ts
+
+OR: 
+
+tsc --watch index.ts 
+
+This will make TS actively monitor the index.ts file, 
+and TS will watch for any file changes that occur
+
+==============
+
+AS A NOTE, IT'S EASIER TO SEE IN VSCODE
+ INTEGRATED TERMINAL
+
+
+
+
+
+
+ ==============================
+
+ WORKING WITH MULTIPLE FILES
+
+ ==============================
+
+We can also work with multiple files 
+
+Let's add another file to demonstrate working 
+with more than one TS file, which is much more common 
+working on an actual team for a job that 
+uses TS
+
+Inside the folder, if we want to compile multiple 
+files, instead of appending: tsc index.ts
+which will only compile that one ts file 
+we can just run tsc on it's own: 
+
+tsc 
+
+Make sure you're in the correct folder, since 
+running tsc on it's own will compile every ts file 
+inside of that folder
+
+We can configure that tsc command to ignore a specific 
+file, and compile all the other TS files, one 
+way to do this is with the TS option called :
+
+# Files - files
+
+On the docs, under project configuration there's 
+tsconfig reference,
+
+Important to note files is known as a top level compiler 
+option, so it does outside of the compiler 
+options json object: 
+
+So in our tsconfig.json file, OUTSIDE the 
+ "compilerOptions": {} we add a comma then 
+
+ "files": [index.ts, test.ts, example.ts] }
+
+now tsc will ignore any other ts files inside of 
+our folder, so if we had index2.ts in addition 
+to index.ts, test.ts, and example.ts but 
+we didn't want it to be compiled, using 
+that json notation and excluding index2.ts, it would not 
+be included when running tsc
+
+============================
+
+ANOTHER WAY TO ACCOMPISH TSC FILE compilation:
+
+INCLUDE & EXCLUDE
+
+=========================
+
+Include allows us to config TS to include 
+a given number of files, below in the ex, 
+everything in the src and test directory 
+will be included in the config
+
+{
+    "include": ["src/**/*", "test/**/*"]
+}
+
+and if we need to exclude a specific file it's 
+the same syntax but using "exclude":[]
+
+
+=============================================
+
+OUTDIR 
+
+=============================================
+
+OUTDIR is how we specify where the returned / 
+compiled JS file are placed, typically 
+we'll have an src folder for all the TS files, then 
+denote an output directory for our JS files after 
+running tsc
+
+after creating a dist directory, and in the tsconfig.json, 
+uncommenting the outdir value and setting it to: 
+
+"outDir": "./dist",  
+
+all the ts files will compile their respective js 
+files in the dist folder
+
+==================================================
+
+TARGET OPTION 
+
+===================================================
+
+This is where we specify which version of ES to compile 
+to 
+
+ "target": "es2016",     
+
+ is what it's currently set to, but it can be set to 
+ es3, es5, es2016, es2017 all the way up to es2022
+
+ =================================
+
+ STRICT OPTION
+
+ ==================================
+
+This is where we can alter the type checks, 
+and constraints for TS, if we change :
+
+"strict": true
+
+to 
+
+"strict": false
+
+we can then change the other type checks that 
+TS will check, but keep in mind this defeats 
+the purpose of TS, most of the time "strict": true
+
+So if in the future you work with a codebase, check and 
+see what the config is set to in tsconfig.json 
+
+==============================================================
+
+COMPILER WRAP UP 
+
+==========================================
+
+Later on we're going to go into more detail 
+inside the tsconfig.json and go over 
+lib, and modules which often will be altered
+
+Also there's allowJS option, to allow js files in 
+the program, then maybe import JS files into the 
+TS files
+
+
+A commonly used extra is "noEmitOnError": true, 
+which will not allow any compilation if errors are 
+in the TS file

@@ -1,0 +1,18 @@
+As we saw previously, TS automatically knows 
+all the type definitions for the DOM, all it's 
+methods and events etc.. 
+
+It's important to learn how to turn it off, 
+sometimes with node, or the backend, it's necessary 
+to turn these off
+
+The way this is done is with the "lib":[] property 
+in the tsconfig.json file, right under "target":
+
+As it stands, it's currently commented out, 
+which means we're using the default, which 
+includes the DOM
+
+It's useful to know about lib, often it may be necessary 
+to let TS know about certain libraries, and those 
+types 

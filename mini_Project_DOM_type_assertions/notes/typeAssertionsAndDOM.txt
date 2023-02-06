@@ -1,0 +1,25 @@
+==========================
+Type Assertions W/ the DOM
+===========================
+
+Back to the DOM, let's see an example where 
+we can use a type assertion, let's add an 
+input element in the HTML page 
+
+Then when the user clicks the button, the value 
+entered in the input field is stored in the todo list
+
+Then erase the input field / reset it 
+
+We use the 'as' keyword appended to the variables that 
+are getting the getElementByID or getElementByClassName 
+
+const btn = document.getElementById('btn')! as HTMLButtonElement;
+
+const input = document.getElementById("todo")! as HTMLInputElement
+
+// above we need to cast it using the 'as' keyword
+ 
+
+ It also tells TS what exactly those values are in relation to 
+ the DOM

@@ -1,0 +1,25 @@
+This section we'll be building a mini-project,
+things to know and keep in mind when building a project
+
+There will be some lecture as well with 
+non-null assertion operator, DOM manipulation, 
+and set up a simple to-do list project with a 
+server
+
+First though, in our project in vscode, let's 
+run the command 'tsc --init' to create the tsconfig.json 
+file in the project
+
+Then create an src folder for all TS files, then 
+a dist folder to house the compiled JS files
+
+Next go into the json config and uncomment 
+outDir and set it to the dist folder, that way 
+all compiled JS will be returned into that 
+specific folder 
+
+At the bottom on the config.json add a commma 
+and use "include": ["src"] which houses all the 
+TS files 
+
+======================================================
