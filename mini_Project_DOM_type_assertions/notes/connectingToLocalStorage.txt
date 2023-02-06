@@ -81,3 +81,41 @@ we use todos.forEach
 Now if we refresh the page, the todos are still there, 
 we need to also make sure if the checkbox is active, 
 it stays that way after refresh 
+
+The final piece is to add an event listener, so that 
+every time the page loads, if the box is checked it 
+remains checked, and if it's changed it stays as is,
+
+function createTodoElement(todo: Todo){
+    
+    const newLi = document.createElement("li");
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox"
+    newLi.append(todo.text);
+    // the .text is from the interface defined above
+    newLi.append(checkbox);
+    
+    uL.append(newLi)
+}
+
+Now let's add the event listener in the above function, 
+
+function createTodoElement(todo: Todo){
+    
+    const newLi = document.createElement("li");
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox"
+    checkbox.addEventListener("change", function(){
+        console.log("clicked")
+        todo.completed = checkbox.checked
+    })
+    newLi.append(todo.text);
+    // the .text is from the interface defined above
+    newLi.append(checkbox);
+    
+    uL.append(newLi)
+}
+
+now if we look at todos in the console, whichever 
+values are checked will have the completed boolean 
+value set to true 

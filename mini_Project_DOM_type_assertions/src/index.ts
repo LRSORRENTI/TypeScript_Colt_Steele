@@ -58,6 +58,10 @@ function createTodoElement(todo: Todo){
     const newLi = document.createElement("li");
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox"
+    checkbox.addEventListener("change", function(){
+       todo.completed = checkbox.checked;
+        console.log("clicked")
+    })
     newLi.append(todo.text);
     // the .text is from the interface defined above
     newLi.append(checkbox);
