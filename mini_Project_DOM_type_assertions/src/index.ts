@@ -11,7 +11,7 @@ interface Todo {
     completed: boolean;
 }
 
-const todos: Todo[] = [];
+const todos: Todo[] = readTodos();
 
 const btn = document.getElementById('btn')! as HTMLButtonElement;
 
@@ -21,6 +21,18 @@ const input = document.getElementById("todo")! as HTMLInputElement;
 const form = document.getElementById("form")! as HTMLFormElement;
 
 const uL = document.getElementById("todolist")!
+
+function readTodos(): Todo[]{
+    const todoJSON = localStorage.getItem("todos")
+    if(todoJSON === null){
+     return [];
+    } else{
+     return JSON.parse(todoJSON)
+    }
+
+}
+
+
 
 function handleSubmit(event: SubmitEvent) {
     event.preventDefault();

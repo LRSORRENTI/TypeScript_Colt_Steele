@@ -5,12 +5,21 @@
 // console.log('auto update in js?')
 // console.log('browswe sync updating?')
 // console.log("live server?")
-const todos = [];
+const todos = readTodos();
 const btn = document.getElementById('btn');
 const input = document.getElementById("todo");
 // above we need to cast it using the 'as' keyword
 const form = document.getElementById("form");
 const uL = document.getElementById("todolist");
+function readTodos() {
+    const todoJSON = localStorage.getItem("todos");
+    if (todoJSON === null) {
+        return [];
+    }
+    else {
+        return JSON.parse(todoJSON);
+    }
+}
 function handleSubmit(event) {
     event.preventDefault();
     const newTodo = {
