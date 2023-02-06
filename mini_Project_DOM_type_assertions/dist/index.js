@@ -21,6 +21,9 @@ function readTodos() {
         return JSON.parse(todoJSON);
     }
 }
+function saveTodos() {
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
 function handleSubmit(event) {
     event.preventDefault();
     const newTodo = {
@@ -31,15 +34,17 @@ function handleSubmit(event) {
     todos.push(newTodo);
     // the above is just in memory, a small data structure, 
     //below is what's viewed  on the page
-    localStorage.setItem("todos", JSON.stringify(todos));
+    saveTodos();
     input.value = "";
 }
 function createTodoElement(todo) {
     const newLi = document.createElement("li");
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.checked = todo.completed;
     checkbox.addEventListener("change", function () {
         todo.completed = checkbox.checked;
+        saveTodos();
         console.log("clicked");
     });
     newLi.append(todo.text);

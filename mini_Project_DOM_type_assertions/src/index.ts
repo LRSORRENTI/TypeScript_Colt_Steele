@@ -35,7 +35,9 @@ function readTodos(): Todo[]{
 
 }
 
-
+function saveTodos(){
+    localStorage.setItem("todos", JSON.stringify(todos))
+}
 
 function handleSubmit(event: SubmitEvent) {
     event.preventDefault();
@@ -48,7 +50,7 @@ function handleSubmit(event: SubmitEvent) {
 
     // the above is just in memory, a small data structure, 
     //below is what's viewed  on the page
-localStorage.setItem("todos", JSON.stringify(todos) )
+saveTodos();
 
     input.value = "";
 }
@@ -58,8 +60,10 @@ function createTodoElement(todo: Todo){
     const newLi = document.createElement("li");
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox"
+    checkbox.checked = todo.completed;
     checkbox.addEventListener("change", function(){
        todo.completed = checkbox.checked;
+       saveTodos()
         console.log("clicked")
     })
     newLi.append(todo.text);
