@@ -12,3 +12,72 @@ We'll use JSON, we'll stringify on the way into the
 
 
 To integrate the todo list w/ local storage, 
+
+
+after adding :
+
+    createTodoElement(newTodo);
+    todos.push(newTodo);
+
+    // the above is just in memory, a small data structure, 
+    //below is what's viewed  on the page
+localStorage.setItem("todos", JSON.stringify(todos) )
+
+    input.value = "";
+
+    we've now set the value passed in as stringify JSON 
+    to localStorage
+
+    in the browser console, typing in localStorage, 
+    the following is displayed :
+
+    Storage {todos: '[{"text":"JSON",
+    "completed":false}]', 
+    ally-supports-cache: 
+    '{"userAgent":"Mozilla/5.0
+     (Windows NT 10.0; Win64;…osition":
+     false,"time":"2022-11-08T15:16:45.936Z"}',
+      length: 2}
+
+      But now we need to load those todos from local storage,
+      to do this, above the handleSubmit function, 
+      we need to add: 
+
+      const todoJSON = localStorage.getItem("todos")
+     console.log( JSON.parse(todoJSON))
+
+     Now after reloading the page, those todos are 
+     still there, logged to the console at least
+
+     Now we can make the above into a function 
+
+  const todos: Todo[] = readTodos();
+
+     function readTodos() {
+    const todoJSON = localStorage.getItem("todos");
+    if (todoJSON === null) {
+        return [];
+    }
+    else {
+        return JSON.parse(todoJSON);
+    }
+}
+
+But now we need to extract those todos to the DOM 
+itself, take it out of localStorage and render it 
+on the page 
+
+now that we have those in localStorage let's use 
+forEach to extract them: 
+
+ const todos: Todo[] = readTodos();
+
+todos.forEach(createTodoElement);
+
+but we also need to remember to add this after all 
+the constant variables, those need to be defined before 
+we use todos.forEach
+
+Now if we refresh the page, the todos are still there, 
+we need to also make sure if the checkbox is active, 
+it stays that way after refresh 

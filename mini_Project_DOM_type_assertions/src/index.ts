@@ -11,7 +11,6 @@ interface Todo {
     completed: boolean;
 }
 
-const todos: Todo[] = readTodos();
 
 const btn = document.getElementById('btn')! as HTMLButtonElement;
 
@@ -21,6 +20,10 @@ const input = document.getElementById("todo")! as HTMLInputElement;
 const form = document.getElementById("form")! as HTMLFormElement;
 
 const uL = document.getElementById("todolist")!
+
+const todos: Todo[] = readTodos();
+
+todos.forEach(createTodoElement);
 
 function readTodos(): Todo[]{
     const todoJSON = localStorage.getItem("todos")
