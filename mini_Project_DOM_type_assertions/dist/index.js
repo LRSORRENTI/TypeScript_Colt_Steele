@@ -21,6 +21,7 @@ function handleSubmit(event) {
     todos.push(newTodo);
     // the above is just in memory, a small data structure, 
     //below is what's viewed  on the page
+    localStorage.setItem("todos", JSON.stringify(todos));
     input.value = "";
 }
 function createTodoElement(todo) {

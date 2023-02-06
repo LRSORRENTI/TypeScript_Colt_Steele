@@ -1,0 +1,14 @@
+
+Local storage is browser based storage, where 
+we can only store text, or strings 
+
+In our index.ts we have our empty todos array, 
+and when we add values, those values need 
+to be converted to text, but needs to be 
+done in a way that can be extracted back out 
+
+We'll use JSON, we'll stringify on the way into the
+ function, then JSON.parse on the way out
+
+
+To integrate the todo list w/ local storage, 
