@@ -1,0 +1,49 @@
+To finish up our Todo list, we need make todos 
+saveable to local storage, to achieve this we 
+need a state 
+
+Let's create an array for the todos, then add an 
+interface for those todos
+
+interface Todo {
+    text: string;
+    completed: boolean;
+}
+
+const todos: Todo[] = [];
+
+const btn = document.getElementById('btn')! as HTMLButtonElement;
+
+const input = document.getElementById("todo")! as HTMLInputElement;
+
+// above we need to cast it using the 'as' keyword
+const form = document.getElementById("form")! as HTMLFormElement;
+
+const uL = document.getElementById("todolist")!
+
+function handleSubmit(event: SubmitEvent) {
+    event.preventDefault();
+    const newTodo: Todo = {
+        text: input.value,
+        completed: false
+    }
+    createTodo(newTodo)
+    todos.push(newTodo);
+
+    // the above is just in memory, a small data structure, 
+    //below is what's viewed  on the page
+    input.value = ""
+}
+
+function createTodoElement(todo: Todo){
+    
+    const newLi = document.createElement("li");
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox"
+    newLi.append(todo.text);
+    // the .text is from the interface defined above
+    uL.append(newLi)
+    newLi.append(checkbox)
+}
+
+form.addEventListener("submit", handleSubmit)
