@@ -1,22 +1,18 @@
-
+"use strict";
 console.log("working?");
 console.log(12);
 console.log("liteserver is updating now? ");
 
-class Food {
-    taste(){
-      console.log("mmmm tasty")  
-    }
-    bleh(){
-        console.log("bleh! not tasty ")
-    }
+class Player {
+  taunt(){
+    console.log("taunt")
+  }
 }
 
-const foodOne = new Food()
-foodOne.taste()
-foodOne.bleh()
-console.log(foodOne)
+const player1 = new Player()
 
-const foodTwo = new Food()
+player1.taunt()
 
-foodTwo.bleh()
+const player2 = new Player()
+
+player2.taunt()
