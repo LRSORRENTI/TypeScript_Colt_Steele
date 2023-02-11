@@ -1,0 +1,27 @@
+==========================
+
+Just as a note, I think the reason lite-server wasnt't 
+working yesterday had something to do with the 
+structure of the index.html, today I had the exact 
+same error message: 
+
+favicon error: 
+
+ 404 (Not Found)" |
+  "http://127.0.0.1:47021/favicon.ico"
+
+  ===========================
+
+  But after adding an h1 to the body, error goes 
+  away immediately after saving the index.html with 
+  the new h1 tag.... 
+
+  Idk, maybe lite-server needs at least a single 
+  html element to display the console.log's 
+  I added in the index.ts? B/c it was compiling 
+  into the dist from the src on save... so yeah 
+  idk 
+  
+  Working now, If I have that error in the future I 
+  guess I'll try to add html elements and see 
+  if that truly was the solution 

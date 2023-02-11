@@ -1,0 +1,6 @@
+First let's add an unordered list, with an id 
+of todolist, this will be where we'll append the 
+items on our list 
+
+So when the submit button is pressed, an additional 
+li or list item is appended to our list 

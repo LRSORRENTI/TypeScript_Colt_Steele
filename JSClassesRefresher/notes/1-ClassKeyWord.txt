@@ -1,0 +1,55 @@
+======================
+RECAP OF JS CLASSES 
+======================
+
+Classes in JS are like templates
+
+Templates to create or construct an object
+
+They contain a few important pieces of syntax that 
+facilitate creation and by extension, customization 
+of organized objects
+
+What does the object look like? 
+
+And what can the object do? What methods does 
+it have access to?
+
+=======================================================
+
+Classes typically have:
+
+- constructors 
+
+- class fields 
+
+- getters and setters 
+
+- private # fields 
+
+- static fields / methods 
+
+- inheritance 
+
+- super()
+
+========================================================
+
+// blueperint for a person:
+
+class Person {
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+    greet(`Hello {this.name}!`)
+}
+
+// Using the blueprint to construct a real person:
+
+const jimmy = new Person('Jimmy', age 20)
+
+// Utilizing a method our new object has based 
+// on the blueprint 
+
+jimmy.greet()

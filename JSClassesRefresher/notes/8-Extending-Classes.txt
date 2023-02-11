@@ -1,0 +1,70 @@
+==================================
+Extending classes AND Inheritance
+==================================
+
+Inheritance means a class can inherit certain, 
+values from a parent class, the example I know 
+off the top of my head is, a class of animal will 
+be the top level parent class, then a class of canine,
+feline, aquatic, amphibian, reptilian and so on beneath 
+the parent class of animal, that will inherit 
+some of the values from that main top level 
+animal class 
+
+Let's look at colt's example: 
+
+class Player{
+    static description = "player in the game";
+    // Since we added the static keyword above, 
+    // that means that it will NOT exist on new 
+    // instances of Player, it only exists 
+    // on the player class
+    #score = 0;
+    numLives = 10; 
+    constructor(first, last){
+        this.first = first;
+        this.last = last;
+    }
+    get fullName(){
+      return `${this.first} ${this.last}`;
+    }
+    // the below will use destructuring, and split 
+    //at the space
+    set fullName(newName){
+        const [first, last] = newName.split(" ");
+        this.first = first; 
+        this.last = last;
+    }
+    get score(){
+        return this.#score; 
+    }
+    set score(newScore){
+       if(newScore < 0){
+        throw new Error("Score can never be negative")
+       }
+       this.#score = newScore;
+    }
+    updateScore(newScore){
+        this.#score = newScore;
+    }
+    taunt(){
+        console.log("booyah")
+    }
+    loseLife(){
+        this.numLives -= 1
+    }
+}
+
+class AdminPlayer extends Player{
+     isAdmin = true;
+}
+
+const admin = new AdminPlayer()
+
+admin.taunt()
+
+
+// So now, admin has everything from the original 
+player class, AND the boolean isAdmin = true,
+obviously any new instance of player won't have 
+that admin boolean 

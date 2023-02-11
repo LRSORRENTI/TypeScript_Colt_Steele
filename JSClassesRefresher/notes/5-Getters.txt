@@ -1,0 +1,55 @@
+============
+Getters
+============
+
+Getters or 'object accessors' are a way to add 
+addtional properties, but they're more like 
+synthetic properties we create: 
+
+class Player{
+    #score = 0;
+    numLives = 10; 
+    constructor(first, last){
+        this.first = first;
+        this.last = last;
+    }
+    get fullName(){
+      return `${this.first} ${this.last}`;
+    }
+    get score(){
+        return this.#score; 
+    }
+    updateScore(newScore){
+        this.#score = newScore;
+    }
+    taunt(){
+        console.log("booyah")
+    }
+    loseLife(){
+        this.numLives -= 1
+    }
+}
+
+
+Now when we add the get fullName getter above, 
+when we call that method, we don't use parentheses, 
+it looks like: 
+
+console.log(player1.fullName)
+
+No parentheses like we'd use on one of the other methods 
+
+console.log(player1.score)
+
+However, with just getters by themselves we can't 
+update the score now in any way if we did: 
+
+player1.score = 55;
+
+console.log(player1.score) 
+// 0
+
+The score is not changed, because getters won't be 
+able to update by themselves, that's where setters 
+come in to play
+

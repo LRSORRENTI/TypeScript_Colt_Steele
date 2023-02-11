@@ -1,0 +1,53 @@
+==================
+Constructors
+==================
+
+Constructors are methods that are usually 
+defined, they are used to call a certain 
+method every time we instantiate using the 
+'new' keyword 
+
+They can only be defined once inside of classes, 
+and it must have the name 'constructor':
+
+class Player { 
+    constructor(){
+        console.log("constructing!")
+    }
+    taunt(){
+        console.log("booyah")
+    }
+}
+
+any time we instantiate a new player with the 'new' 
+keyword, the constructor will run whatever's inside 
+of that constructor function
+
+So we don't manually call the constructor, it runs 
+automatically on every new instance using the 'new' 
+keyword 
+
+Constructor is a special function in that way, 
+if we had a method inside of the class, we would have to 
+use dot notation to activate that method, a constructor 
+will auto activate / run on every new instance 
+
+const player1 = new Player();
+// constructing is logged to the console, if 
+// we want to use the taunt method, use dot notation 
+
+player1.taunt();
+
+//then both constructing and booyah are logged 
+
+Usually the constructor will have arguments passed in, 
+and we use 'this' keyword to assign them: 
+
+class Player{
+    constructor(first, last){
+        this.first = first;
+        this.last = last;
+    }
+}
+const player1 = new Player("Luke", "Sorrenti")
+console.log(player1.first, player1.last)
