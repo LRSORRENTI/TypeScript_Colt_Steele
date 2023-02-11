@@ -1,0 +1,63 @@
+=========================
+STATIC FIELDS AND METHODS
+=========================
+
+If we use the 'static' keyword in front of a 
+property like:
+
+class Player{
+    static description = "player in the game";
+    // Since we added the static keyword above, 
+    // that means that it will NOT exist on new 
+    // instances of Player, it only exists 
+    // on the player class
+    #score = 0;
+    numLives = 10; 
+    constructor(first, last){
+        this.first = first;
+        this.last = last;
+    }
+    get fullName(){
+      return `${this.first} ${this.last}`;
+    }
+    // the below will use destructuring, and split 
+    //at the space
+    set fullName(newName){
+        const [first, last] = newName.split(" ");
+        this.first = first; 
+        this.last = last;
+    }
+    get score(){
+        return this.#score; 
+    }
+    set score(newScore){
+       if(newScore < 0){
+        throw new Error("Score can never be negative")
+       }
+       this.#score = newScore;
+    }
+    updateScore(newScore){
+        this.#score = newScore;
+    }
+    taunt(){
+        console.log("booyah")
+    }
+    loseLife(){
+        this.numLives -= 1
+    }
+}
+
+So the only way to access description is with:
+
+console.log(Player.description)
+
+if we had: 
+
+const player3 = new Player();
+
+player3.description does NOT exist 
+
+We can do the same with methods inside 
+of the class if we wanted to, static basically 
+ensures that a certain value only exists inside 
+the class definition, no where else
