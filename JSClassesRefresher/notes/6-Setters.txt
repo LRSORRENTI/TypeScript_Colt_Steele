@@ -1,0 +1,67 @@
+================
+Setters
+================
+
+Setters are used to update or 'set'
+a property
+
+It will behave in a similar way, and also 
+add logic that will check for invalid values
+
+
+
+
+class Player{
+    #score = 0;
+    numLives = 10; 
+    constructor(first, last){
+        this.first = first;
+        this.last = last;
+    }
+    get fullName(){
+      return `${this.first} ${this.last}`;
+    }
+    // the below will use destructuring, and split 
+    //at the space
+    set fullName(newName){
+        const [first, last] = newName.split(" ");
+        this.first = first; 
+        this.last = last;
+    }
+    get score(){
+        return this.#score; 
+    }
+    set score(newScore){
+       if(newScore < 0){
+        throw new Error("Score can never be negative")
+       }
+       this.#score = newScore;
+    }
+    updateScore(newScore){
+        this.#score = newScore;
+    }
+    taunt(){
+        console.log("booyah")
+    }
+    loseLife(){
+        this.numLives -= 1
+    }
+}
+
+Now if we console.log player1 with a negative score:
+
+console.log(player1.score)
+
+player1.score = -5;
+
+console.log(player1.score)
+
+The console will throw the error message defined above:
+"score can never be negative"
+
+console.log(player1.fullName);
+player1.fullName = "John Doe"
+console.log(player1)
+
+Now the player1 object will have first set to John 
+and last set to Doe
