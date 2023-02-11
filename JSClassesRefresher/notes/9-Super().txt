@@ -1,0 +1,113 @@
+=================
+SUPER KEYWORD 
+=================
+
+Super is when we have Inheritance or the 
+extends keyword being used to extend one 
+// into another 
+
+// Essentially, super() is used when we use a 
+// constructor function inside that extended one 
+class into another 
+
+
+class Player{
+    static description = "player in the game";
+    // Since we added the static keyword above, 
+    // that means that it will NOT exist on new 
+    // instances of Player, it only exists 
+    // on the player class
+    #score = 0;
+    numLives = 10; 
+    constructor(first, last){
+        this.first = first;
+        this.last = last;
+    }
+    get fullName(){
+      return `${this.first} ${this.last}`;
+    }
+    // the below will use destructuring, and split 
+    //at the space
+    set fullName(newName){
+        const [first, last] = newName.split(" ");
+        this.first = first; 
+        this.last = last;
+    }
+    get score(){
+        return this.#score; 
+    }
+    set score(newScore){
+       if(newScore < 0){
+        throw new Error("Score can never be negative")
+       }
+       this.#score = newScore;
+    }
+    updateScore(newScore){
+        this.#score = newScore;
+    }
+    taunt(){
+        console.log("booyah")
+    }
+    loseLife(){
+        this.numLives -= 1
+    }
+}
+
+class AdminPlayer extends Player{
+    constructor(adminPowers){
+       this.adminPowers = adminPowers;
+    }
+     isAdmin = true;
+}
+
+const admin = new AdminPlayer(["delete"], ["restore"])
+
+Now if we look at our admin, we get an error: 
+
+Must call super constructor in derived class before 
+accessing 'this' or returning from derived 
+constructor at new AdminPlayer
+
+Thats where super() comes in, we need to 
+add super() under the constructor func 
+in class AdminPlayer extends Player
+ 
+class AdminPlayer extends Player{
+    constructor(adminPowers){
+    super();
+       this.adminPowers = adminPowers;
+    }
+     isAdmin = true;
+}
+
+So above super() is referencing
+ constructor(first, last){
+        this.first = first;
+        this.last = last;
+    }
+    from the top level Player class
+
+To restructure this: 
+
+ 
+class AdminPlayer extends Player{
+    constructor(first, last, adminPowers){
+    super(first, last);
+       this.adminPowers = adminPowers;
+    }
+     isAdmin = true;
+}
+
+Now we call the admin like: 
+
+const admin = new AdminPlayer("Luke", "SorrAdmin",
+["delete", "restore"])
+
+our admin now has a first name, last name as well 
+as the powers from the super(), 
+we have two constructor funcs running 
+
+In a nutshell, when we use the extends keyword, and 
+we want to add an additional constructor to the 
+inherited class, we need to use super() to call 
+the parent constructor using super 
