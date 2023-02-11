@@ -1,0 +1,116 @@
+================
+Private Fields 
+================
+
+Often in classes, we'll want things to remain 
+private, if we have score in the player class: 
+
+class Player{
+    score = 0;
+    numLives = 10; 
+    constructor(first, last){
+        this.first = first;
+        this.last = last;
+    }
+    taunt(){
+        console.log("booyah")
+    }
+    loseLife(){
+        this.numLives -= 1
+    }
+}
+
+Maybe we don't want score to ever be able to become 
+negative, in order to prevent this we use an 
+octothorpe or pound sign '#' right before the 
+field name: 
+
+class Player{
+    #score = 0;
+    numLives = 10; 
+    constructor(first, last){
+        this.first = first;
+        this.last = last;
+    }
+    taunt(){
+        console.log("booyah")
+    }
+    loseLife(){
+        this.numLives -= 1
+    }
+}
+
+This tells JS to never allow score 
+to be accessed outside 
+of where it is, only accessible
+ inside the class definition
+
+If we wanted a way for the user to access score, 
+we can use a wrapper method: 
+
+class Player{
+    #score = 0;
+    numLives = 10; 
+    constructor(first, last){
+        this.first = first;
+        this.last = last;
+    }
+    getScore(){
+        return this.#score; 
+    }
+    updateScore(newScore){
+        this.#score = newScore;
+    }
+    taunt(){
+        console.log("booyah")
+    }
+    loseLife(){
+        this.numLives -= 1
+    }
+}
+
+Now it can be accessed with dot notation 
+
+console.log(player1.getScore)
+
+So it can be viewed, but it cannot be modified, unless
+we use the updateScore method: 
+
+console.log(player1.updateScore(30))
+
+so now player1 score is set to 30
+
+Same thing works with methods, we can make a private 
+method: 
+
+class Player{
+    #score = 0;
+    numLives = 10; 
+    constructor(first, last){
+        this.first = first;
+        this.last = last;
+        this.#secret();
+    }
+    getScore(){
+        return this.#score; 
+    }
+    updateScore(newScore){
+        this.#score = newScore;
+    }
+    taunt(){
+        console.log("booyah")
+    }
+    loseLife(){
+        this.numLives -= 1
+    }
+    #secret(){
+        console.log("secret method" )
+    }
+}
+
+That secret method is not accessible outside of the class,
+so console.log(player1.#secret()) 
+
+will return an error, but when we add it to the 
+constuctor above, that's totally fine, we just 
+can't access private fields outside of class definitions 
