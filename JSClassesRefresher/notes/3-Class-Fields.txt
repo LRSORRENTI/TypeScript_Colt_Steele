@@ -1,0 +1,27 @@
+====================
+Class Fields 
+====================
+
+Usually with classes we'll want default 
+properties, or fields, to add them to our 
+classes, we put them outside / before the 
+constructor function: 
+
+
+
+class Player{
+    score = 0;
+    numLives = 10; 
+    constructor(first, last){
+        this.first = first;
+        this.last = last;
+    }
+}
+
+So now, every new instantiation of player will 
+always start with a score of 0, and numLives of 10
+
+Important to note, this is only for values that 
+should always be there at the start, obviously 
+we need arguments of player name and any other unique 
+values to be passed in to the constructor func 
