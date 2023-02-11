@@ -16,7 +16,21 @@ class Player{
         this.first = first;
         this.last = last;
     }
+    taunt(){
+        console.log("booyah")
+    }
+    loseLife(){
+        this.numLives -= 1
+    }
 }
+
+const player1 = new Player();
+
+console.log(player1.numLives) // 10
+
+player1.loseLife()
+
+console.log(player1.numLives) // 9 
 
 So now, every new instantiation of player will 
 always start with a score of 0, and numLives of 10
