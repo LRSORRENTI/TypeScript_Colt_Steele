@@ -1,47 +1,46 @@
-// Now let's talk about the private modifer, 
-// we can put private in front of 
-// any property or method and that will 
-// tell TS that this property is only ever 
-// accessible inside that instance or class
+// Next up let's go over the private modifier
+// This will tell TS a given value or method 
+// should only ever be accessible from 
+// inside that class
 
-// and should NOT be accessible publicly
+// There should be 0 ways of accessing the 
+// private value outside the class: 
 
-class Game{
-   public name: string;
-   public  systems: string[] | string;
-   public  rating: number;
-    private serialNum: number = 22626;
+class Dog {
+     private owner: string = "luke";
+    public breed: string;
+    public age: number;
 
-    constructor(gameName: string,
-        systemName: string[] | string,
-        rating: number){
-            this.name = gameName;
-            this.systems = systemName;
-            this.rating = rating;
-            this.secretMethod()
-            // NOTE that we can instantiate 
-            // the private method inside of 
-            // the class:
-         
+    constructor( breed: string,
+        age: number){
+            this.breed = breed;
+            this.age = age;
         }
 
-       private secretMethod(): void{
-            console.log('private method')
-        }
-}
+        private secretMethod(): void{
+        console.log("secret method")
+       }
 
-const game = new Game("Dark Souls 3", ["Xbox",
- "Playstatiom", "PC"], 9.5 )
+    }
 
- console.log(game.name, game.systems[0], game.rating)
+    const dogg = new Dog( "Cava-Corgi", 2 )
 
-//  game.serialNum = 56774;
+    console.log(dogg)
 
-// game.secretMethod()
+    console.log(dogg.owner)
 
- // if we hover over the error: 
- //Property 'serialNum' is
- // private and only accessible within class 'Game'.
+    dogg.owner = "john"
 
- // Using public and private together provides 
- // clarity to any one else reading your code 
+    console.log(dogg.owner)
+
+    console.log(dogg.owner)
+
+    dogg.secretMethod()
+
+    // IMportant to remember, this will compile 
+    // to JS just fine, JS doesn't care that a property 
+    // has private set to it, it's only in TS where 
+    // the errors are highlighted, and private 
+    // is only on the TS side of things , it tells 
+    // TS this property or method should only be accessible 
+    // inside the class in which it's defined

@@ -1,32 +1,31 @@
 "use strict";
-// Now let's talk about the private modifer, 
-// we can put private in front of 
-// any property or method and that will 
-// tell TS that this property is only ever 
-// accessible inside that instance or class
-// and should NOT be accessible publicly
-class Game {
-    constructor(gameName, systemName, rating) {
-        this.serialNum = 22626;
-        this.name = gameName;
-        this.systems = systemName;
-        this.rating = rating;
-        this.secretMethod();
-        // NOTE that we can instantiate 
-        // the private method inside of 
-        // the class:
+// Next up let's go over the private modifier
+// This will tell TS a given value or method 
+// should only ever be accessible from 
+// inside that class
+// There should be 0 ways of accessing the 
+// private value outside the class: 
+class Dog {
+    constructor(breed, age) {
+        this.owner = "luke";
+        this.breed = breed;
+        this.age = age;
     }
     secretMethod() {
-        console.log('private method');
+        console.log("secret method");
     }
 }
-const game = new Game("Dark Souls 3", ["Xbox",
-    "Playstatiom", "PC"], 9.5);
-console.log(game.name, game.systems[0], game.rating);
-//  game.serialNum = 56774;
-// game.secretMethod()
-// if we hover over the error: 
-//Property 'serialNum' is
-// private and only accessible within class 'Game'.
-// Using public and private together provides 
-// clarity to any one else reading your code 
+const dogg = new Dog("Cava-Corgi", 2);
+console.log(dogg);
+console.log(dogg.owner);
+dogg.owner = "john";
+console.log(dogg.owner);
+console.log(dogg.owner);
+dogg.secretMethod();
+// IMportant to remember, this will compile 
+// to JS just fine, JS doesn't care that a property 
+// has private set to it, it's only in TS where 
+// the errors are highlighted, and private 
+// is only on the TS side of things , it tells 
+// TS this property or method should only be accessible 
+// inside the class in which it's defined
