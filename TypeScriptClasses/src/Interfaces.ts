@@ -62,3 +62,19 @@ interface IPerson {
   const dave = new Persona("dave", 30)
 
   console.log(dave)
+
+
+interface Ishape {
+    getArea(): number;
+}
+
+class Rectangle implements Ishape{
+    private length: number;
+    private width: number;
+    
+
+    public getArea(length): number {
+      
+     
+    }
+}

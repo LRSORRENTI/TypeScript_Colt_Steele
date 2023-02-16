@@ -17,7 +17,8 @@ class PlayerThree {
 
      }
 // the above constructor is equivalent to what's below
-// it's a shortcut to cleaner TS code 
+// it's a shortcut to cleaner TS code, it removes 
+// the need for this.value = something etc..
 
     // constructor(x: string, y: string){
     //     // this.first = x;
