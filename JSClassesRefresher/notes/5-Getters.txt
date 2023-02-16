@@ -16,6 +16,9 @@ class Player{
     get fullName(){
       return `${this.first} ${this.last}`;
     }
+    get lastFirst(){
+        return `${this.last} ${this.first}`;
+    }
     get score(){
         return this.#score; 
     }

@@ -1,0 +1,90 @@
+=======================
+Generics in TypeScript
+=======================
+
+Generics can be difficult to pick up at first, 
+Generics syntax is a little clunky to look at but 
+they are vital 
+
+You'll see them all the time when working with 
+TS code bases, and you'll end up using them 
+a lot in your own projects
+
+==============================
+
+Generics allow us to define reusable 
+functions  and classes that work with multiple 
+types, rather than a single type 
+
+The syntax looks a bit odd, but generics are 
+everywhere in the TS world, if you get 
+a job that utilizes TS, it's almost a guarantee 
+that it will implement generics in the code, so 
+best get comfortable
+
+Ex:
+================================================
+
+function wrapInArray<T>(element: T): T[]{
+    return [element];
+}
+
+So yeah lots of <T> everywhere, but they're very important 
+to learn and implement
+
+
+And you may be thinking "I can already define a TS 
+function that can have multiple types, using the 
+union operator
+
+function wrapInArray(param1: string | number): number | string
+{
+logic that checks which. num or str?
+}
+
+So the above is not a generic, it's just a function 
+that has an argument that can be either string
+or number 
+
+A generic will say okay, you passed in a number, I return 
+a number, or you passed in a string, I re
+turn a string
+
+So we abstract the type away even further
+
+Let's look at an example we saw much earlier, with 
+array types 
+
+const nums: number = []
+
+But theres another way to write the above 
+
+const nums: Array<number> = []
+
+// the above will be an array of nums 
+
+const names: Array<string> = []
+
+// the above will be an array of strings 
+
+
+So the angle brackets is the key, if we 
+go back to the example of interface Animal, we could 
+do: 
+
+const lifeForms: Array<Animal> = []
+
+It's a bit of a factory, it can take in a type, 
+and return another type based on that type, 
+if we give it a number array type, it will 
+return a number array, if you pass in string type, 
+it will return an array of string type
+
+
+
+
+
+
+
+
+
