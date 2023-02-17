@@ -1,11 +1,19 @@
 const numz: Array<number> = []
 
-const colorz: Array<string> = []
+let colorz: Array<string> = []
 
+colorz.push(123)
+
+colorz = [1, 3, 5]
+
+colorz = ["one"]
+
+colorz.push("two")
 // a built in method used all the time 
 // is document.querySelector, or getElementbyWhatever
 
-const inputElz = document.querySelector<HTMLInputElement>("#username")!;
+const inputElz = 
+document.querySelector<HTMLInputElement>("#username")!;
 // so we can tell TS with < > that this value 
 // is this type, and it will return HTMLInputElement type
 
@@ -13,7 +21,7 @@ const inputElz = document.querySelector<HTMLInputElement>("#username")!;
 // this tells TS it will NEVER be null
 
 console.dir(inputElz)
-inputElz.value = "you123"
+inputElz.value = "Luke123"
 
 const btn = document.querySelector<HTMLButtonElement>(".btn")!;
 // also quick reminder, we use CSS syntax for grabbing 
