@@ -16,3 +16,15 @@ console.log(rand<boolean>([true, false, true]));
 
 console.log(rand([1, "true", false, null, undefined]))
 
+// The catch with using inference is that 
+// with certain types like 
+// const btn = document.querySelector<HTMLButtonElement>(".btn")
+// There's no possible way for TS to infer that htmlbuttonelement 
+// type, that's why with a lot of types like that we 
+// must tell TS that's the type 
+
+// So TS will know that there's a relationship 
+// b/w the argument type, and the return type, 
+// TS will infer when we annotate the <T> or <Type>
+// keep in mind, like a lot of things, there's 
+// a time and a place for both
