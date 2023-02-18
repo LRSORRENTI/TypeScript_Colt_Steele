@@ -1,5 +1,9 @@
 var numz = [];
 var colorz = [];
+colorz.push(123);
+colorz = [1, 3, 5];
+colorz = ["one"];
+colorz.push("two");
 // a built in method used all the time 
 // is document.querySelector, or getElementbyWhatever
 var inputElz = document.querySelector("#username");
@@ -8,7 +12,7 @@ var inputElz = document.querySelector("#username");
 // And remember, we add the '!' postfixed to the value, 
 // this tells TS it will NEVER be null
 console.dir(inputElz);
-inputElz.value = "you123";
+inputElz.value = "Luke123";
 var btn = document.querySelector(".btn");
 // also quick reminder, we use CSS syntax for grabbing 
 // values if they're classes or id's, . for class, # for id, 
