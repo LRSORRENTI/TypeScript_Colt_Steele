@@ -9,7 +9,7 @@
 // object with properties from both 
 // passed in objects 
 
-function merge(obj1, obj2){
+function merge<Type1, Type2>(obj1: Type1, obj2: Type2){
     return{
         ...obj1,
         ...obj2
@@ -52,6 +52,17 @@ function realMerge<T, U>(obj1: T, obj2: U){
 }
 
 const newCombo = realMerge({name: "Mc"}, {pets: ["Molly", "Bear"]})
+
+
+function realMerger<T, U>(obj1: T, obj2: U){
+    return{
+        ...obj1,
+        ...obj2
+    }
+}
+
+
+const newComboTwo = realMerger({name: "Mc"}, {pets: ["Molly", "Bear"]})
 
 // Now if you hover over realMerge above you'll 
 // TS is smart it recognizes that the return type 
