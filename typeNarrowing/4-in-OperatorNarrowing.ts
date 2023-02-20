@@ -29,12 +29,31 @@ interface TVShow{
     true: boolean;
 }
 
-function getRunTime(arg1: Moviez | TVShow){
+function getRunTime(media: Moviez | TVShow){
     // in this example we can't use typeof 
     // to check for us, since typeof 
     // is used to check primitive values
     // so we use the 'in' operator
-    if("mumSeasons" in arg1){
-        return arg1.
+    if("true" in media){
+        return media.numSeasons * media.episodeDuration;
     }
+    media
+    // now if we hover over the above, TS 
+    // knows we're working with media of type 
+    // moviez, and that's b/c of the return statement
+    // 
 }
+
+getRunTime({title: "Amadeus", duration: 160})
+// above works fine, we're passing in all the 
+// required values needed for Moviez
+
+getRunTime({title: "Game of thrones", numSeasons: 8,
+episodeDuration: 60})
+
+// above is not valid, we're not passing in all the 
+// values for TVShow, if we add true: true, error 
+// goes away
+
+getRunTime({title: "Game of thrones", numSeasons: 8,
+episodeDuration: 60, true: true})
