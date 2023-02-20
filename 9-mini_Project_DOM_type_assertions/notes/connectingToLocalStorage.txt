@@ -119,10 +119,3 @@ function createTodoElement(todo: Todo){
 now if we look at todos in the console, whichever 
 values are checked will have the completed boolean 
 value set to true 
-
-Next we must save / update local storage, 
-to do this let's put the logic in it's own function: 
-
-function saveTodos(){
-    localStorage.setItem("todos", JSON.stringify(todos))
-}
