@@ -1,0 +1,78 @@
+Type Declaration files don't end in just .ts, 
+they end in .d.ts
+
+These files serve a very special purpose, in a .d.ts 
+file there is only type information, declarations 
+of types, which TS can then look at and enforce 
+ type rules on our code
+
+ Let's say we do tsc --init in a new folder and create 
+ an src/index.ts 
+
+ then type in console. after the dot you'll have 
+ the auto complete for things located in the console
+
+ TS knows about the console in the lib.dom.d.ts file when 
+ you right click on console and click the
+  type definition in VSCode
+
+  there's an interface console that 
+  has a lot of methods like clear() and log() 
+  all the console methods available on the console 
+  object
+
+  And remember in the default tsconfig file, 
+  "lib": [] is commented out, it's using the 
+  default
+
+  But when we work with third party libraries, 
+  we need to utilize that lib, but first let's 
+  create an src folder with an index.ts
+
+  and in the tsconfig change "outDir": "./dist"
+
+  and at the bottom add  ,"include": ["src"]
+
+  run tsc and now we have a new empty index.js file in 
+  the dist folder
+
+  Next up we'll install axios library, which is a third 
+  party library we can install that helps with 
+  HTTP requests, and we'll execute with node
+
+And we're going to use axios to make a request to 
+a basic json placeholder api
+
+That just has placeholder resources, like posts, and 
+if we look at /posts we get a json response that will look like:
+
+[ 
+    {
+
+    "userid: 1,
+    "id": 1,
+    "title": "lorem ipsum dolor"
+    "body": "more lorem ipsum but much longer"
+
+   },
+
+   more json objects below
+]
+
+First though we need to import axios, we've installed it, 
+it is in our package.json
+
+and in our index.ts file at the top:
+
+import axios from "axios";
+
+axios
+
+then right click on axios and click type definiton, 
+we see axios came with a huge type definition file, 
+the index.d.ts file
+
+That means it's all set up for us, we don't need 
+to do any extra work, all the type definitions are 
+ready to go, but the next library we'll look at will 
+not come with type definitions
