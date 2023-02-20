@@ -27,6 +27,12 @@ type Pig = {
     __type: "Pig"
 }
 
+interface Sheep {
+    name: string;
+    weight: number;
+    age: number;
+    __type: "Sheep"
+}
 // So we've got three patterns now, two types and 
 // an interface
 
@@ -61,9 +67,21 @@ function getFarmAnimalSound(animal: FarmAnimal){
             return "moo";
             case("Rooster"):
             //animal
-            return "bawk bawk"
+            return "bawk bawk";
             // now if we hover over animal, TS knows 
             // it's Pig
+            default: 
+            // we should never make it here!! IF 
+            // we handled all cases correctly,
+            // if for example we tried to pass in 
+            // a farm animal that shouldn't be there,
+            // we want the code to let us know, 
+            // and if we add Sheep to the 
+            // FarmAnimal type: type FarmAnimal = Rooster | Cow | Pig | Sheep
+            // an error occurs below, and the reason is because 
+            // we're not handing the case("Sheep")
+            const _exhaustiveCheck: never = animal;
+            return _exhaustiveCheck
         }
     }
 const stevie: Rooster = {
