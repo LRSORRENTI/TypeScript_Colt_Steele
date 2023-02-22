@@ -20,7 +20,7 @@ import axios from "axios";
 // LEt's make a basic get request w/ axios using 
 // axios.get method
 
-axios.get("https://jsonplaceholder.typicode.com/users/1")
+axios.get<number>("https://jsonplaceholder.typicode.com/users/1")
 .then(response => {
 
     console.log("successful get??")
@@ -64,3 +64,30 @@ axios.get("https://jsonplaceholder.typicode.com/users/1")
 
 // So it's working, the get was successful and we get 
 // the single json object for user #1
+
+// So that json object above, let's use it as 
+// an interface: 
+
+interface User{
+    id: number;
+    name: string;
+    username:string;
+    email: string;
+    address: {
+        street: string;
+        suite: string;
+        city: string;
+        zipcode: string;
+        geo: {
+            lat: string;
+            lng: string;
+        }
+    },
+    phone: string;
+    website: string;
+    company: {
+        name: string;
+        catchphrase: string;
+        bs: string;
+    }
+}
