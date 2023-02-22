@@ -121,3 +121,6 @@ axios.get<User[]>("https://jsonplaceholder.typicode.com/users/1")
 // Above we added forEach and the array brackets []
 // postfix to the <T> or <User[]>. then inside call 
 // forEach to loop through and printUser on each one
+
+// the <User[]> tells axios that what should return 
+// is an array of user types
