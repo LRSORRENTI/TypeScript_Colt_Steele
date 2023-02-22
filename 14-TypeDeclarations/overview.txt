@@ -76,3 +76,10 @@ That means it's all set up for us, we don't need
 to do any extra work, all the type definitions are 
 ready to go, but the next library we'll look at will 
 not come with type definitions
+
+And axios gives us many different methods like 
+axios.get and axios.post etc..
+
+In the next section we'll go over a basic json placeholder
+api, we use axios to retrieve an endpoint 
+that has json objects full of user data 
