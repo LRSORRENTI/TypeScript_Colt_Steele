@@ -107,3 +107,17 @@ function printUser(user: User){
 // definition file is intimidating, If I were doing 
 // this alone I probably would be struggling, I'll 
 // get there though, one day at a time
+
+axios.get<User[]>("https://jsonplaceholder.typicode.com/users/1")
+.then(response => {
+
+    console.log("successful get??")
+    console.log(response.data)
+   response.data.forEach(printUser)
+}).catch(error =>{
+    console.log("there was an error", error)
+})
+
+// Above we added forEach and the array brackets []
+// postfix to the <T> or <User[]>. then inside call 
+// forEach to loop through and printUser on each one
