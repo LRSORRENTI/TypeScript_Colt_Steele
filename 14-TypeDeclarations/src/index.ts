@@ -19,12 +19,14 @@ import axios from "axios";
 
 // LEt's make a basic get request w/ axios using 
 // axios.get method
-
-axios.get<number>("https://jsonplaceholder.typicode.com/users/1")
+// See interface User below, that's what we're putting 
+// as the type for axios.get()
+axios.get<User>("https://jsonplaceholder.typicode.com/users/1")
 .then(response => {
 
     console.log("successful get??")
     console.log(response.data)
+    printUser(response.data)
 }).catch(error =>{
     console.log("there was an error", error)
 })
@@ -91,3 +93,9 @@ interface User{
         bs: string;
     }
 }
+
+
+function printUser(user: User){
+    console.log(user.name, user.email, user.phone)
+}
+
