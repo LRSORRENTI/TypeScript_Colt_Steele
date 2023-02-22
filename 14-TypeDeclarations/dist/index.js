@@ -19,18 +19,16 @@ const axios_1 = __importDefault(require("axios"));
 // ===============================================
 // LEt's make a basic get request w/ axios using 
 // axios.get method
+// See interface User below, that's what we're putting 
+// as the type for axios.get()
 axios_1.default.get("https://jsonplaceholder.typicode.com/users/1")
     .then(response => {
     console.log("successful get??");
     console.log(response.data);
+    printUser(response.data);
 }).catch(error => {
     console.log("there was an error", error);
 });
-// above if you hover over .get, you'll see it returns 
-// a Promise type, so it returns a promise
-// then lets add the .then with res or response, log
-// success if it succeeds, and then a .catch with e or 
-// error which will log the error if there is one
-// okay so after running node .\dist\index.js 
-// in the terminal, we log 'successful get??'
-// in the terminal, 
+function printUser(user) {
+    console.log(user.name, user.email, user.phone);
+}

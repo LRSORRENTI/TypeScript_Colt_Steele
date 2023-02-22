@@ -99,3 +99,11 @@ function printUser(user: User){
     console.log(user.name, user.email, user.phone)
 }
 
+// and yes after running node, the following is printed: 
+
+// Leanne Graham Sincere@april.biz 1-770-736-8031 x56442
+
+// Not going to lie, the massive size of the axios tyoe 
+// definition file is intimidating, If I were doing 
+// this alone I probably would be struggling, I'll 
+// get there though, one day at a time
