@@ -153,3 +153,33 @@ and change the module setting to ES6
  away since I have live-server, but if I hypothetically 
  just opened the index.html in the browser w/o live server 
  I get the same error colt just did 
+
+ ================================
+ IMPORT / EXPORT SYNTAX IN DEPTH 
+ ================================
+
+ Let's quickly go over the syntax of what we're actually 
+ doing
+
+ We are using named exports currently, where we're 
+ individually exporting functions / classes 
+ variables / code, the code just needs the export keyword 
+
+ And in the index.ts file we use the import {funcName, 
+ varName, className, etc...} from "./func.js" or whatever 
+ file were exporting from 
+
+ So named exports are individual instances exported 
+ using the export prefixed to the code
+
+Another way is to use a 'default export' 
+
+
+==================================
+IMPORTING TYPES 
+==================================
+
+As a note if we try to import types, it will 
+be removed from the js file, but this is exclusive 
+to types, sometimes you may see 'import type {Person}' 
+or 'import {type Person, funcName }
