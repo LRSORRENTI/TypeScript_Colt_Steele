@@ -83,3 +83,20 @@ axios.get and axios.post etc..
 In the next section we'll go over a basic json placeholder
 api, we use axios to retrieve an endpoint 
 that has json objects full of user data 
+
+Check the notes in the index.ts for overview of axios section
+
+=============================
+INSTALLING TYPES SEPARATELY
+=============================
+
+Now let's look at a library that DOESN'T come 
+with it's own type definitions, the library 
+we'll look at is Lodash
+
+Lodash is a library that includes many utility 
+functions, things like _.shuffle() to get 
+a random element in an array, _.partition to 
+partition an array based on a given function 
+many different utility functions, but they DON'T 
+include type definitions
