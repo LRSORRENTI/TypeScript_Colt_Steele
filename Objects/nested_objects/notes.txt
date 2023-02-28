@@ -1,0 +1,11 @@
+=================================
+NESTED OBJECTS IN TYPESCRIPT
+=================================
+
+In the real world, data will usually be 
+nested deeply, objects with arrays of objects 
+inside an object etc..
+
+How do we annotate those types? 
+
+We use the same syntax just nested
