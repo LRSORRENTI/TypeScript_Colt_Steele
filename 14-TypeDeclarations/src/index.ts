@@ -1,6 +1,9 @@
 import axios from "axios";
-
+import _ from "lodash"
 // axios
+// _.shuffle()
+
+_.sample([18, 23, 44])
 
 // once we install axios and confirm it's in 
 // our package.json, we have access to all the 

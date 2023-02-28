@@ -1,0 +1,99 @@
+====================
+TypeScript Modules
+====================
+
+This section we're going over modules, which 
+are ways to share code b/w files, which 
+historically has been a tedious thing to 
+do in JS, there was commonJS, esModule syntax, 
+the landscape of modules is a fractured one
+
+But it's crucial to understand, 
+TS supports modules, it allows us to 
+share code b/w files, also 
+allows us to control the output it generates
+
+But first let's go over: 
+
+===============================
+TYPESCRIPT NAMESPACES
+===============================
+
+This has to do w/ organizing code, 
+it's a module format that's TS specific, 
+is pre-dates the ES modules standard, on the Docs, 
+there's an overview of it 
+
+But the good news is that it's not as common as 
+it was in the past
+
+In TypeScript, a namespace is a way to organize
+ code into logical groups, similar to how modules 
+ work in other programming languages.
+ 
+  Namespaces can contain functions, classes,
+   interfaces, and other types of declarations,
+    and they can be nested inside other 
+    namespaces to create a hierarchical structure.
+
+The main purpose of namespaces is to
+ prevent naming collisions between 
+ different parts of a codebase. 
+ 
+ By wrapping related code inside a
+  namespace, you can ensure that
+   its identifiers don't clash with 
+   similarly named entities in other
+    parts of the program.
+
+However, namespaces have some
+ drawbacks that led to their 
+ replacement by ES modules in 
+ modern TypeScript code.
+ 
+  One major issue is that namespaces 
+  can be difficult to manage and 
+  scale as a project grows larger,
+   especially when multiple developers 
+   are working on the same codebase. 
+   
+   Additionally, namespaces can lead to
+    issues with circular dependencies 
+    and can make it harder to understand
+     the structure of a codebase.
+
+ES modules, on the other hand,
+ provide a standardized way to
+  import and export code between
+   different files, making it 
+   easier to manage dependencies 
+   and create a more modular codebase. 
+   
+   ES modules are part of the JavaScript 
+   language specification, which means
+    that they are widely supported 
+    across modern browsers and
+     runtime environments.
+
+In summary, namespaces in 
+TypeScript provide a way to 
+organize code and prevent naming
+ collisions, but they have 
+ limitations in terms of scalability
+  and complexity. ES modules provide
+   a more modern and standardized 
+   way to manage dependencies
+    and create modular code,
+     which is why they have
+      largely replaced namespaces
+       in modern TypeScript code.
+
+       ===========================
+       Working with modules
+       ===========================
+
+       So namespaces are the old way, and the 
+       new way we share code across files is with 
+       modules, using the import and export keywords 
+
+       

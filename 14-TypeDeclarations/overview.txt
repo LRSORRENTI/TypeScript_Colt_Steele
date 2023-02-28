@@ -137,4 +137,12 @@ But the main takeaway is that in order to get
 the types for a library, if they're available 
 at least you run: 
 
-npm install --save-dev @types/libraryNameHere
+npm install --save-dev @types/libraryNameHere 
+
+And a final note, on the TS docs you can 
+actually search for the library, and it will bring 
+up the command to enter to add types for that given 
+JS library, and for ex if we search for 
+axios on the TS docs, it will only display 
+npm i axios, because it knows axios is a library 
+that comes with type definitions included
