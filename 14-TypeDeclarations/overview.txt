@@ -100,3 +100,41 @@ a random element in an array, _.partition to
 partition an array based on a given function 
 many different utility functions, but they DON'T 
 include type definitions
+
+So if we look inside of node_modules and go into 
+the lodash folder, then open the package.json, we 
+see that there are no type definitions in there, 
+in the axios package.json, there were many
+
+If we want to use lodash in TS, we need to find the 
+corresponding type defintions elsewhere, good news 
+that most of the popular JS libraries will have 
+pre-existing type definition files that have 
+been created for them, they usually will just 
+need to be installed separately
+
+And if we go to the official TS Docs, you'll see 
+has a section on 'consumption' how to consume 
+type declarations
+
+Getting type declarations requires no tools apart from 
+npm 
+
+Getting declarations for a library like lodash takes 
+nothing more than the following command: 
+
+npm install --save-dev @types/lodash
+
+A lot of the type definitions for libraries comes from 
+a repo on github called: DefinitelyTyped 
+
+Now in our index.ts, the error is gone, we have our index.d.ts 
+and if we right click on _.shuffle() and click 
+type definition, we're good to go, we have the .d.ts 
+file 
+
+But the main takeaway is that in order to get 
+the types for a library, if they're available 
+at least you run: 
+
+npm install --save-dev @types/libraryNameHere
