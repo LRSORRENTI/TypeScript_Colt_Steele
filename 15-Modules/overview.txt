@@ -120,3 +120,36 @@ to change to
 Right now we've been executing with node, but let's say 
 we want to do something in the browser, so let's 
 add an index.html
+
+And after opening up live server, the console shows the 
+following error: 
+
+index.js:8 Uncaught ReferenceError: exports is not defined
+
+So what's happening is the browser doesn't know 
+about commonjs modules, it doesn't know about the 
+'export' keyword, that worked fine when we executed 
+with node 
+
+Right now our code is just not browser compatible 
+
+There are tools to use if we wanted like webpack, 
+requireJS, there are tools to use to make the code run 
+but it will not work as is 
+
+So what we do is go back in the tsconfig.json file 
+and change the module setting to ES6
+ 
+ But it still won't be browser compatible after changing 
+ it to ES6, to fix this we must do this in the script 
+ tag: 
+
+ <script type="module" src="./dist/index.js"></script>
+
+ Also right now, Colt's did not work, but he's not using 
+ live-server, so there was an additional error, however 
+ he just ran npm install lite-server, which is comparable 
+ to live-server, and it works, it worked for me right 
+ away since I have live-server, but if I hypothetically 
+ just opened the index.html in the browser w/o live server 
+ I get the same error colt just did 
