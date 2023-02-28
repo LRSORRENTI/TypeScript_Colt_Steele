@@ -1,9 +1,12 @@
 "use strict";
 // let's pretend this is an amazing 
 // utility function file we just created 
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.sample = exports.add = void 0;
 function add(x, y) {
     return x + y;
 }
+exports.add = add;
 function sample(arr) {
     // this generic func takes some type, 
     // an array of that type and returns 
@@ -11,6 +14,7 @@ function sample(arr) {
     const index = Math.floor(Math.random() * arr.length);
     return arr[index];
 }
+exports.sample = sample;
 // So now we have two utility functions we've split 
 // into this file, so now let's say we want to import 
 // the code from this file elsewhere in the project, 

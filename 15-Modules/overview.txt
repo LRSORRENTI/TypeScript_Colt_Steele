@@ -96,4 +96,22 @@ organize code and prevent naming
        new way we share code across files is with 
        modules, using the import and export keywords 
 
-       
+       So if we omit the import / export keywords, 
+       TS assumes the code in the file should be 
+       globally available aka global scope
+
+       Any file without an export or a top level await 
+       should be considered a script and not a module
+
+So in the index.ts, we have add() and sample() both 
+available, because in our utilityExample.ts file 
+we haven't used export on those funcs, once we prefix 
+the export keyword to those functions, they are no longer 
+available globally, unless we use the import keyword to 
+bring them into specific files
+
+also note we can change the module syntax when compiling 
+with tsc, in the tsconfig.json we would change 
+"module": "commonjs" to "module": "ES6", there is auto 
+complete in the tsconfig as well, a list of options availabke 
+to change to

@@ -9,7 +9,7 @@ import {add, sample} from './utilityExample.js'
 
 console.log("hello universe")
 
-add(2, 4)
+console.log(add(2, 4));
 
-sample(['s'])
+console.log(sample(['s', 'cheque', 'ambrose']));
 
