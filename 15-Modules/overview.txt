@@ -115,3 +115,8 @@ with tsc, in the tsconfig.json we would change
 "module": "commonjs" to "module": "ES6", there is auto 
 complete in the tsconfig as well, a list of options availabke 
 to change to
+
+
+Right now we've been executing with node, but let's say 
+we want to do something in the browser, so let's 
+add an index.html
