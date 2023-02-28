@@ -1,10 +1,9 @@
-"use strict";
 // let's pretend this is an amazing 
 // utility function file we just created 
-function add(x, y) {
+export function add(x, y) {
     return x + y;
 }
-function sample(arr) {
+export function sample(arr) {
     // this generic func takes some type, 
     // an array of that type and returns 
     // an element of that type

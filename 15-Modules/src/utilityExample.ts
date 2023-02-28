@@ -1,11 +1,11 @@
 // let's pretend this is an amazing 
 // utility function file we just created 
 
-function add(x: number, y: number){
+export function add(x: number, y: number){
     return x + y
 }
 
-function sample<T>(arr: T[]): T{
+export function sample<T>(arr: T[]): T{
 // this generic func takes some type, 
 // an array of that type and returns 
 // an element of that type
