@@ -1,0 +1,10 @@
+========================
+WEBPACK AND TYPESCRIPT
+========================
+
+This next section is all about 
+using TS and webpack together
+
+But first what's the purpose of webpack?
+
+Well webpack allows us to 
