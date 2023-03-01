@@ -7,4 +7,52 @@ using TS and webpack together
 
 But first what's the purpose of webpack?
 
-Well webpack allows us to 
+Well webpack allows us to take complicated 
+applications that may consist of hundreds or thousands 
+of different files with dependencies, using import 
+and export, split things into different files 
+and have third party libraries
+
+Webpack allows us to take all the above and create 
+bundles, or packs 
+
+It combines them, shrinks them, compresses them into 
+smaller bundles 
+
+There's a ton more JS these days, especially with 
+SPA's, so instead of the JS being all there, 
+the browser may need to make many requests to load 
+different JS files
+
+The page is built on the client-side, so it may 
+bring over the html and css to start, but then make 
+many requests for the different JS files to build the 
+SPA 
+
+So how do we manage this JS? How do we bundle 
+them together to make them as compact as possible? 
+To make as few requests as possible?
+
+ Well for each script, it requires a new HTTP request
+ in the browser, which can lead to a bottleneck 
+
+ And writing code in one massive JS file is not ideal 
+ as a dev it can be a challenge working in one gigantic 
+ JS file, so how do we balance this?
+
+ We balance it with webpack, webpack allows us to 
+ grab many different assets, js files, sass, templating
+ languages, boil it down into one bundled file that 
+ we can load as a single script 
+
+ At it's core webpack is a static module bundler for 
+ JS applications, when webpack processes your app, it 
+ internally builds a dependency graph from one or 
+ more entry points then combines every module the 
+ project needs into one or more bundles, which are 
+ static assets  to serve your content from
+
+Though the tricky part with webpack, especially with 
+TS is the config step, how do we set webpack in a way 
+that will work well, which takes practice, and some 
+copying and pasting 
