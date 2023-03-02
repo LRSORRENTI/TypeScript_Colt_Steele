@@ -1,5 +1,11 @@
- export function add(x: number, y: number){
-return x + y; 
+import _ from "lodash"
+
+// were going to use the lodash add() to power 
+// our add function, just as a demo to illustrate 
+// more on dependencies
+
+export function add(x: number, y: number){
+return _.add(x, y)
 }
 
 export function subtract(x: number, y: number){

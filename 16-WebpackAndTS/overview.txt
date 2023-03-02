@@ -5,7 +5,9 @@ WEBPACK AND TYPESCRIPT
 This next section is all about 
 using TS and webpack together
 
+=========================================
 But first what's the purpose of webpack?
+=========================================
 
 Well webpack allows us to take complicated 
 applications that may consist of hundreds or thousands 
@@ -56,3 +58,91 @@ Though the tricky part with webpack, especially with
 TS is the config step, how do we set webpack in a way 
 that will work well, which takes practice, and some 
 copying and pasting 
+
+=======================
+SETTING UP OUR PROJECT
+=======================
+
+    Now let's practice by setting up a simple 
+    app with a couple different files that are 
+    connected, which we'll have webpack bundle 
+
+    After adding and using tsc to compile to JS, we have 
+    an index.html with a script tag: 
+
+     <script type="module" src="dist/index.js"></script>
+
+     And in that index.js we have: 
+
+     import Dog from "./Dog.js";
+import ShelterDog from "./shelterDog.js";
+import { add, multiply, divide, subtract } from "./utilities.js";
+const maggie = new Dog("Maggie", 2, "cava-corgi");
+maggie.bark();
+console.log("from index.ts");
+console.log(add(4, 5), multiply(4, 5), subtract(20, 4), divide(10, 2));
+const buffy = new ShelterDog("Max", 3, "lab", true);
+
+So the main index.js has these imports from other JS files, 
+and if we go into the network tab in the browser, 
+using live-server btw, then look at JS we see that 
+there's all the scripts, index.js, Dog.js, shelterDog.js,
+utilities.js, then something called chunk-d8251103.js
+
+And they're loading sequentially, they are all separate 
+scripts that had to be loaded, they're all separate 
+requests, and this is a simple example but let's 
+pretend we had 100 different files, different libraries 
+etc.. 
+
+Now let's add lodash and use the lodash _add() for 
+another dependency 
+
+So in the utilities ts file, we now have: 
+
+import _ from "lodash"
+
+// were going to use the lodash add() to power 
+// our add function, just as a demo to illustrate 
+// more on dependencies
+
+export function add(x: number, y: number){
+return _.add(x, y)
+}
+
+So our add() now depends on lodash, lodash needs to load 
+before anything can happen in the add() func
+
+And if we check the browser, we've got an error, now 
+we can use webpack to help us bundle these files 
+together
+
+===================
+Installing Webpack
+===================
+
+To install webpack and some of the dependencies 
+we'll need to use it we run: 
+
+npm install --save-dev webpack webpack-cli typescript ts-loader
+
+In order to use or call webpack, we also need to 
+install webpack-cli,  and we also added typescript, 
+which should always be included in the package.json 
+so if anyone is collaborating, they can see the exact 
+version we're using, and ts-loader, which is the 
+middle man between TS and webpack, and what it will do 
+is use tsc then hand that over to webpack for bundling
+
+And if you go to webpack's website, there are 
+many different loaders, some for files, for json, babel
+vue js, angular and so on
+
+=============================
+Configuring Webpack
+=============================
+
+Before we can use webpack, it needs to be 
+configured, which is a bit of a pain, but needs 
+to be done 
+
