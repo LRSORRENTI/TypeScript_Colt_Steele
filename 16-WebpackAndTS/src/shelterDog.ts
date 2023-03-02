@@ -1,3 +1,8 @@
-import { Dog } from "./Dog";
+import Dog  from "./Dog";
 
-export class ShelterDog extends Dog
+export default class ShelterDog extends Dog{
+    constructor(name: string, age: number, 
+        breed: string, public shelter: boolean){
+        super(name, age, breed)
+    }
+}
