@@ -247,3 +247,27 @@ You may need an appropriate loader to handle
 And this error is from the test: /\tsx?$/
 We need to add a prefixed dot: 
 test: /\.tsx?$/,
+
+And yes after running npm run build for a final 
+time. we do get a warning but it bundles our files into 
+a massive bundle.js file
+
+And now if we want to use the bundle we need 
+to link to it in the index.html like we would 
+with any other script, 
+<script type="module" src="dist/bundle.js"></script>
+
+And we can get rid of type="module" since it's 
+now a single bundled together file:
+
+<script src="dist/bundle.js"></script>
+
+And yes after opening with live server, all the 
+console.logs are there, but they're coming from 
+bundle.js 
+
+Now there is a caveat. how do we debug this bundle file? 
+It's gigantic and verbose, what is we need to identify 
+and change something?
+
+So how do we do this? SOURCE MAPS 
