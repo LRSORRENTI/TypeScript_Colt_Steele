@@ -162,6 +162,8 @@ config steps are
 
 But let's step through them one by one 
 
+const path = require("path")
+
 module.exports = {
     // first is the entry point below, 
     // and what the entry point does is 
@@ -224,3 +226,24 @@ Then we go to the package.json and add a script,
 // which will execute webpack when we enter npm run build 
 // which only works since we do have webpack cli 
 // installed 
+
+// So after running npm run build, we see that webpack 
+is trying to work but we're getting a few errors, 
+first thing is the error is all the .js file 
+extensions in our ts files, so inside them we need to 
+change the import Dog from Dog.js to just import Dog 
+from "./Dog"
+
+Now we're getting another error: 
+
+ERROR in ./src/utilities.ts 7:21
+Module parse failed: Unexpected token (7:21)
+You may need an appropriate loader to handle
+ this file type, currently no
+  loaders are configured to process
+   this file. 
+   See https://webpack.js.org/concepts#loaders
+
+And this error is from the test: /\tsx?$/
+We need to add a prefixed dot: 
+test: /\.tsx?$/,

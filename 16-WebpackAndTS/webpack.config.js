@@ -16,7 +16,7 @@ module.exports = {
     module: {
         rules: [
           {
-            test: /\tsx?$/,
+            test: /\.tsx?$/,
             // the above looks strange so 
             // let's break it down peice by peice, 
             // the '$' means this pattern must come 
