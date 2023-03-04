@@ -271,3 +271,40 @@ It's gigantic and verbose, what is we need to identify
 and change something?
 
 So how do we do this? SOURCE MAPS 
+
+================
+SOURCE MAPS
+================
+
+Source maps help us debug and make sense of the 
+huge bundle.js file, it's all compressed
+
+So a source map will take that bundle, map it backwards 
+to it's pre-bundled state
+
+To enable source map, inside the tsconfig json, 
+we want   "sourceMap": true,   uncommented. 
+
+then in the webpack config we need to enable 
+it insdie module.exports = {
+    devtool: 'inline-source-map'
+}
+
+So now after setting that value sourcemap to true, 
+in the browser console sources tab, we now have a 
+webpack_ts option with a cloud icon next to it 
+
+And inside there, our files that were compiled into 
+the huge bundle.js are there, bundle.js is also there but 
+in a different tab in the dist folder, source map 
+just enabled us to see the webpack_ts dropdown 
+with our Dog.ts, shelterDog.ts, utilities.ts, and 
+the index.ts file 
+
+We can add breakpoints and other functionalities 
+to the page, we can interact and debug the code 
+as if it wasn't bundled together using that sourcemap
+
+And inside the bundle.js there's a new section: 
+//# sourceMappingURL=data:application/json; with a whole 
+lot of code following it
