@@ -48,7 +48,7 @@ module.exports = {
             // from those dependencies we installed 
             // earlier if you remember, then we also 
             // add exclude
-            exclude: /node_modules/
+            exclude: /node_modules/,
             // and the reason to exclude node modules 
             // is because it usually has a lot of TS 
             // files, we don't want it to load 
