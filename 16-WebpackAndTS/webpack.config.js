@@ -59,7 +59,7 @@ module.exports = {
     // then we add resolve, and the types of 
     // files we want webpack to resolve
     resolve: {
-        extensions: [".tsx", ".ts", ".js" ]
+        extensions: [".tsx", ".ts", ".js" ],
     },
     // then we need to include the output, 
     // and we need to use that path.resolve 
@@ -70,8 +70,8 @@ module.exports = {
     // it in the dist folder of that directory
     output: {
         filename: "bundle.js",
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, "dist"),
         publicPath: "/dist",
-    }
+    },
   
-}
+};
