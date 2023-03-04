@@ -271,3 +271,21 @@ It's gigantic and verbose, what is we need to identify
 and change something?
 
 So how do we do this? SOURCE MAPS 
+
+================
+SOURCE MAPS
+================
+
+Source maps help us debug and make sense of the 
+huge bundle.js file, it's all compressed
+
+So a source map will take that bundle, map it backwards 
+to it's pre-bundled state
+
+To enable source map, inside the tsconfig json, 
+we want   "sourceMap": true,   uncommented. 
+
+then in the webpack config we need to enable 
+it insdie module.exports = {
+    devtool: 'inline-source-map'
+}
