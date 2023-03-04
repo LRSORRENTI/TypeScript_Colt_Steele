@@ -13,6 +13,10 @@ module.exports = {
     // and the rules array will help webpack know 
     // what to do when it encounters js files, or 
     // sass files, or static assets etc.. 
+    devtool: "inline-source-map",
+    // the above is how we set the source map, 
+    // which will take that bundle, map it backwards 
+    // to it's pre-bundled state
     module: {
         rules: [
           {
