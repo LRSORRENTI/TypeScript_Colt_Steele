@@ -2,6 +2,19 @@
 const path = require("path")
 
 module.exports = {
+  mode: "development",
+  // The above will fix the error message after 
+  // running npm run build, where it's saying no 
+  // mode has been set yet, please set mode to development 
+  // or production
+
+// As a note, once we switch the above to 
+// mode: "production", everything goes back to being 
+// fully bundled in that huge bundle.js style, 
+// but in mode: development it looks normal, 
+// more normal in a code readability sense 
+
+
     // first is the entry point below, 
     // and what the entry point does is 
     // allow us to specify the entry point for 
@@ -58,6 +71,7 @@ module.exports = {
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, 'dist'),
+        publicPath: "/dist"
     }
   
 }
