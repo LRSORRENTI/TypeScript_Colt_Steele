@@ -308,3 +308,83 @@ as if it wasn't bundled together using that sourcemap
 And inside the bundle.js there's a new section: 
 //# sourceMappingURL=data:application/json; with a whole 
 lot of code following it
+
+=============================
+WEBPACK DEVELOPMENT SERVER 
+=============================
+
+So when we ran npm run build, we got a few 
+warnings:
+
+ WARNING in configuration
+The 'mode' option has not been set, webpack will fallback to 'production' for this value.
+Set 'mode' option to 'development' or 'production' to enable defaults for each environment.
+You can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/configuration/mode/
+
+This warning above can be fixed by setting the
+ mode: "development", in the webpack config inside of 
+ module.exports{
+
+ }
+
+
+WARNING in asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets:
+  bundle.js (982 KiB)
+
+WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  main (982 KiB)
+      bundle.js
+
+WARNING in webpack performance recommendations:
+You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
+For more info visit https://webpack.js.org/guides/code-splitting/
+
+webpack 5.75.0 compiled with 4 warnings in 4205 ms
+
+
+  mode: "development",
+  // The above will fix the error message after 
+  // running npm run build, where it's saying no 
+  // mode has been set yet, please set mode to development 
+  // or production
+
+// As a note, once we switch the above to 
+// mode: "production", everything goes back to being 
+// fully bundled in that huge bundle.js style, 
+// but in mode: development it looks normal, 
+// more normal in a code readability sense 
+
+But we also need to checkout the webpack-dev-server 
+which will act similar to live-server, but it also 
+handles the bundling behind the scenes 
+
+And it does it in memory, instead of making a bundle 
+file every single time and writing to the disk, 
+it keeps the bundle in memory in development
+
+To install we run: 
+
+npm install --save-dev webpack-dev-server 
+
+And looking at the docs the command we run is: 
+npx webpack serve, but we'll set up a custom script 
+to run in the packagejson 
+
+{
+    "scripts":{
+        "serve": "webpack serve"
+    }
+}
+
+And in addtion in the webpackconfig.js file under 
+output, add publicPath: "/dist"
+
+  output: {
+        filename: "bundle.js",
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: "/dist"
+    }
+  
