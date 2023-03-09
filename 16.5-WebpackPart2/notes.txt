@@ -17,3 +17,17 @@ COLT IS USING:
     "webpack": "^5.73.0",
     "webpack-cli": "^4.10.0"
 }
+
+the command to install a specific version 
+of a dependency is: 
+
+npm install [package-name]@[version-number]
+
+so like: 
+
+npm install typescript@4.7.4
+
+This will give the exact version that colt has
+in his project, now I don't know if this is what's 
+causing the issue, but it might be so let's try 
+to fix it
