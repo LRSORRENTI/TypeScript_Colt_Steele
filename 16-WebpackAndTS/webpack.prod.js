@@ -1,3 +1,4 @@
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require("path");
 
 module.exports = {
@@ -21,4 +22,5 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     publicPath: "/dist",
   },
+plugins: [new CleanWebpackPlugin()]
 }
