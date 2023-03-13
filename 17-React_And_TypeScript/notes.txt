@@ -1,0 +1,30 @@
+====================
+React & TypeScript
+====================
+
+Just like we saw with lodash, React also has type 
+definitions, there are types that we can add 
+to a React app we plan on building 
+
+Types for react component elements, 
+function component elements, class 
+component types, lot's of type definitions
+
+And usually we'll use create-react-app command 
+to set up our React application
+
+To set up a TS + React app run the following 
+command: 
+
+npx create-react-app my-appName --template typescript 
+
+and voila, and it's the --template typescript that 
+is the main flag we must include to set up the 
+TS + React project
+
+There are ways to add TS types a different way 
+with command flags @types/node or @types/react-dom etc.. 
+
+But create-react-app my-AppName --template typescript
+is the go-to
+
