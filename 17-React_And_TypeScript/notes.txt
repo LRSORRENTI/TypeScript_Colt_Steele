@@ -28,3 +28,13 @@ with command flags @types/node or @types/react-dom etc..
 But create-react-app my-AppName --template typescript
 is the go-to
 
+==================================
+CREATE REACT APP WITH TYPESCRIPT 
+==================================
+
+Okay so the default app is running after typing npm start, 
+except instead of .jsx we see .tsx, b/c we're using typescript
+
+There's also a tsconfig.json file that's already 
+set up for us, the option to tweak those settings 
+are still there for you in that file 

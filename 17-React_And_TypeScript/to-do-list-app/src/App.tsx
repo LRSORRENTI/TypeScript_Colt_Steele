@@ -2,7 +2,13 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-console.log("hello from ts")
+
+const strOne: string = "luke";
+
+console.log("hello from ts", strOne)
+console.log(1)
+
+
 
 function App() {
   return (
