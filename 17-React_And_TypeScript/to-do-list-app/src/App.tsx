@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+console.log("hello from ts")
+
 function App() {
   return (
     <div className="App">
@@ -16,7 +18,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React Luke
         </a>
       </header>
     </div>
