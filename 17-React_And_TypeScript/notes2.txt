@@ -98,3 +98,8 @@ export default Greeter;
 
 So now we've explicitly annotated inside the Greeter 
 component what the return type needs to be 
+
+Also utilizing cheat sheets for React + TypeScript 
+can be very useful, just googling React and TS 
+cheat sheets will provide very useful snippets to 
+Learn and use 
