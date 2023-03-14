@@ -1,0 +1,100 @@
+=========================================
+Our first React Component with TypeScript
+=========================================
+
+We're going to start with functional components, 
+although class components are still used sometimes
+
+But for demo purposes, we're going to utilize 
+functional components
+
+First create a components directory in the src 
+folder, and the first component will be a basic 
+one, a greeter function, so in the components
+folder create Greeter.tsx file 
+
+And after creating this the first thing we 
+always need to do is at the top of the 
+file add: 
+
+import React from "react";
+
+Then let's create our function 
+
+function Greeter(){
+return <h1>Hello there!</h1>
+}
+
+export default Greeter;
+
+So right now the above is a valid, albeit very 
+basic react component. Nothing TypeScripty about 
+it at all, no type annotations, no 
+generics
+
+Next go to the main App.tsx file and add: 
+
+import Greeter from './components/Greeter';
+
+Then in the App component add <Greeter /> 
+inside the div add a few: 
+
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React Luke
+        </a>
+        <Greeter />
+        <Greeter />
+        <Greeter />
+      </header>
+    </div>
+  );
+}
+
+
+So now on the main page we see three h1's saying 
+Hello there! rendered.
+
+Very simple, and this is identical to the react you've 
+seen before, BUT and an emphasized but, if we hover 
+over the <Greeter /> we see the following: 
+
+(alias) function Greeter(): JSX.Element 
+
+So that func returns a JSX.Element type, that's a 
+type that we get automatically when we ran 
+that initial React + TypeScript setup at the 
+beginning, we didn't need to do it ourselves, it was 
+already in the type definitions
+
+And if we right click then click view type definitions
+we can view it in the index.d.ts file
+
+But if we wanted to be explicit about the return 
+type, we can and probably should do that, so 
+inside the Greeter.tsx file, annotate the return 
+type 
+
+import React from "react"; 
+
+function Greeter(): JSX.Element {
+    return <h1>Hello there!</h1>
+}
+
+export default Greeter;
+
+So now we've explicitly annotated inside the Greeter 
+component what the return type needs to be 

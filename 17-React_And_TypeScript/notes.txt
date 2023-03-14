@@ -38,3 +38,20 @@ except instead of .jsx we see .tsx, b/c we're using typescript
 There's also a tsconfig.json file that's already 
 set up for us, the option to tweak those settings 
 are still there for you in that file 
+
+But let's focus on the src folder, there's the 
+public folder as well but there's nothing that deals 
+with typescript in there, it's just where the main 
+index.html file is, and any assets / images 
+
+But in the src folder we see tsx, which is just 
+jsx but typescript instead of javascript
+
+Now rmemeber with tsx generics, arrow functions 
+have a syntax with a trailing comma: 
+
+const func = <T,>(x: T): T => {
+    return x;
+}
+
+===============================================================
