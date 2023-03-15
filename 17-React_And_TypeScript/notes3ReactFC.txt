@@ -1,0 +1,18 @@
+==================
+A note on React FC 
+===================
+
+Why React.FunctionComponent<{}> is deprecated
+
+const Greeter: React.FC = () => {
+  return <h1> Hello World </h1>
+}
+
+It's something you'll likely run into in older code
+bases, and other courses, but using 
+
+function Greeter(): JSX.Element {
+    return <h1> Hello World </h1> 
+}
+
+Is what's normally used currently

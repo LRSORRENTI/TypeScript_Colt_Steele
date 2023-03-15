@@ -35,9 +35,9 @@ function App() {
         >
           Learn React Luke
         </a>
-        <Greeter />
-        <Greeter />
-        <Greeter />
+        <Greeter person = "Luke" age={29}/>
+        <Greeter person = "Frank" age={74} />
+        <Greeter person = "Catherine" age={69} />
       </header>
     </div>
   );
