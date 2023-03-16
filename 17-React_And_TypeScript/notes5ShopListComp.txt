@@ -1,0 +1,9 @@
+=================================
+Creating a ShoppingList Component
+=================================
+
+Let's make a shopping to-do list component, 
+which will render some li's and a form, like 
+a shopping list form, and we'll manage state in App 
+probably, just so we can illustrate passing things 
+down
