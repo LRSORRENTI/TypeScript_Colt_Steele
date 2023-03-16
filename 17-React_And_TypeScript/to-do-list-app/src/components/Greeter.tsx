@@ -13,7 +13,12 @@ import React from "react";
 
 // export default Greeter;
 
-// so we can make an interface for the props
+// so we can make an interface / type for the props
+
+// type GreetingProps = {
+//     person: string,
+//     age: number
+// }
 
 interface GreeterProps  { 
  person: string;
