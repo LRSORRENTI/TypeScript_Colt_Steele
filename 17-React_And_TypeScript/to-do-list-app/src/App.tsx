@@ -8,6 +8,7 @@ import { number } from 'yargs';
 import { type } from 'os';
 import ShoppingListForm from './components/ShoppingListForm';
 import Item from './components/models/item'
+import {v4 as getId} from "uuid"
 
 const strOne: string = "luke";
 
@@ -32,6 +33,7 @@ function App() {
  const addITem = (product: string) => {
   console.log("here in app comp?>")
   console.log(product)
+  setItems([...items, {id: getId(), product, quantity: 1}])
  }
  // so setItems is what we'll call to update items 
 
