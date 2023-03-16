@@ -29,6 +29,10 @@ func(1)
 
 function App() {
  const [items, setItems] = useState<Item[]>([])
+ const addITem = (product: string) => {
+  console.log("here in app comp?>")
+  console.log(product)
+ }
  // so setItems is what we'll call to update items 
 
  // and above we need to add the type item to 
@@ -61,8 +65,8 @@ function App() {
         <RenderListItems listName='milk'/>
         <RenderListItems listName='protein powder'/> */}
         
-        <div>{ <ShoppingList items={items} />}
-        <ShoppingListForm />
+        <div> <ShoppingList items={items} />
+        <ShoppingListForm onAddItem = {addITem} />
         </div>
 
       </header>
