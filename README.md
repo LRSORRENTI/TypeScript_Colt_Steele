@@ -9,3 +9,9 @@ ___
 Will be cloning the empty repo down to auto-set the 
 remote, then adding, committing and pushing as 
 frequently as I can
+
+______
+
+Course finished, had a lot of fun, I do really 
+to clean up and edit my notes, which I will do,
+just not today lol
