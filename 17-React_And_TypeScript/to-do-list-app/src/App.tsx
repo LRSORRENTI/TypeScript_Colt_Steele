@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Greeter from './components/Greeter';
+import RenderListItems from './components/ShoppingList'
 
 const strOne: string = "luke";
 
@@ -35,9 +36,14 @@ function App() {
         >
           Learn React Luke
         </a>
-        <Greeter person = "Luke" age={29}/>
+        {/* <Greeter person = "Luke" age={29}/>
         <Greeter person = "Frank" age={74} />
-        <Greeter person = "Catherine" age={69} />
+        <Greeter person = "Catherine" age={69} /> */}
+        <RenderListItems listName='eggs'/>
+        <RenderListItems listName='milk'/>
+        <RenderListItems listName='protein powder'/>
+        
+
       </header>
     </div>
   );
