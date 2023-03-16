@@ -30,10 +30,10 @@ func(1)
 
 function App() {
  const [items, setItems] = useState<Item[]>([])
- const addITem = (product: string) => {
+ const addItem = (product: string, quantity: number) => {
   console.log("here in app comp?>")
   console.log(product)
-  setItems([...items, {id: getId(), product, quantity: 1}])
+  setItems([...items, {id: getId(), product, quantity}])
  }
  // so setItems is what we'll call to update items 
 
@@ -68,7 +68,7 @@ function App() {
         <RenderListItems listName='protein powder'/> */}
         
         <div> <ShoppingList items={items} />
-        <ShoppingListForm onAddItem = {addITem} />
+        <ShoppingListForm onAddItem = {addItem} />
         </div>
 
       </header>
