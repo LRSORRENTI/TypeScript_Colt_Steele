@@ -1,0 +1,21 @@
+========================
+useState With TypeScript
+========================
+
+Okay let's introduce some state, we're using 
+hooks
+
+So instead of the hard coded array of items: 
+
+const items = [
+    {id: 1, productName: "Eggs", quantity: 12},
+    {id: 2, productName: "Milk", quantity: 1},
+    {id: 3, productName: "Protein Powder", quantity: 1}
+]
+
+We're going to create an array in the beginning, 
+then we'll get back from useState then, useState 
+gives a func to update that peice of state so at the 
+top we also need to import useState: 
+
+import React, {useState} from 'react'

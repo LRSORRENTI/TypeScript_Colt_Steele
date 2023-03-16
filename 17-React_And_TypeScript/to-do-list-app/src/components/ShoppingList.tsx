@@ -1,6 +1,6 @@
 import React from "react";
 
-
+import Item from './models/item'
 
 // type listItems = {
 //     listName: string,
@@ -17,11 +17,11 @@ import React from "react";
 // BELOW IS COLT'S SOLUTION, ABOVE IS WHAT I DID BEFORE 
 // WATCHING COLT'S SOLUTION
 
-interface Item {
-    id: number;
-    productName: string;
-    quantity: number;
-}
+// interface Item {
+//     id: number;
+//     productName: string;
+//     quantity: number;
+// }
 
 
 interface ShoppingProps {
@@ -42,7 +42,7 @@ export default function ShoppingList(props: ShoppingProps): JSX.Element {
         <ul>
         {props.items.map((item) => (
                  <li key={item.id}>
-                    {item.productName} 
+                    {item.product} 
                     - {item.quantity}
                     </li>
                 ))}
