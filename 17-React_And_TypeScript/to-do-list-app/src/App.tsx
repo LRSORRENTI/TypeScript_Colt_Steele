@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Greeter from './components/Greeter';
 import RenderListItems from './components/ShoppingList'
 import ShoppingList from './components/ShoppingList';
+import { number } from 'yargs';
+import { type } from 'os';
+import ShoppingListForm from './components/ShoppingListForm';
+import Item from './components/models/item'
 
 const strOne: string = "luke";
 
@@ -21,12 +25,20 @@ func(1)
 // But this can be avoided if writing a regular 
 //function, not an arrow function
 
+
+
 function App() {
-  const items = [
-    {id: 1, productName: "Eggs", quantity: 12},
-    {id: 2, productName: "Milk", quantity: 1},
-    {id: 3, productName: "Protein Powder", quantity: 1}
-]
+ const [items, setItems] = useState<Item[]>([])
+ // so setItems is what we'll call to update items 
+
+ // and above we need to add the type item to 
+ // the useState to say hey useState, you need to 
+ // be type Item
+//   const items = [
+//     {id: 1, productName: "Eggs", quantity: 12},
+//     {id: 2, productName: "Milk", quantity: 1},
+//     {id: 3, productName: "Protein Powder", quantity: 1}
+// ]
   return (
     <div className="App">
       <header className="App-header">
@@ -49,7 +61,9 @@ function App() {
         <RenderListItems listName='milk'/>
         <RenderListItems listName='protein powder'/> */}
         
-        <div>{ <ShoppingList items={items} />}</div>
+        <div>{ <ShoppingList items={items} />}
+        <ShoppingListForm />
+        </div>
 
       </header>
     </div>
